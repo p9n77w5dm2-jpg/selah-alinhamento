@@ -1,0 +1,1822 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2335613c'/%3E%3Cpath d='M7 14.5 16 7l9 7.5V26H7Z' fill='none' stroke='white' stroke-width='2.4' stroke-linejoin='round'/%3E%3C/svg%3E">
+<title>Alinhamento Selah</title>
+<style>
+/* ---------- Tokens ---------- */
+:root{
+  --bg:#f3f1ec;--bg-glass:rgba(243,241,236,.88);--surface:#fff;--surface-2:#f8f6f2;--surface-3:#ebe7e0;
+  --border:#e1dcd3;--border-strong:#cbc4b8;
+  --text:#1c1e21;--muted:#5f656d;--faint:#8b9098;
+  --accent:#35613c;--accent-ink:#fff;--accent-soft:#e2ebe1;
+  --trans-bg:#edf1f5;--trans-border:#b6c4d2;--trans-ink:#3f4d5c;
+  --ok:#2c7536;--warn:#9a6110;--danger:#b42318;
+  --ok-soft:#e3f1e5;--warn-soft:#fbefd9;--danger-soft:#fde7e4;
+  --shadow:0 1px 2px rgba(30,25,20,.06),0 3px 12px rgba(30,25,20,.05);
+  --c-abertura:#2f6db5;--c-adoracao:#7449c0;--c-oracao:#1b8475;--c-palavra:#a66a0f;--c-ofertorio:#3b8a3e;--c-testemunho:#b8507f;--c-avisos:#56687b;--c-intervalo:#7f848d;--c-refeicao:#bf5a26;--c-encerramento:#ad3443;--c-outro:#6b6f76;--c-trans:#5b7389;
+  --k-palco:#7651c2;--k-som:#2b74c4;--k-luz:#a87b06;--k-projecao:#178a7b;--k-pessoas:#c4561f;--k-espaco:#5b7a32;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0e1013;--bg-glass:rgba(14,16,19,.88);--surface:#161a1f;--surface-2:#1b2027;--surface-3:#252b33;
+    --border:#2a3038;--border-strong:#3b434e;
+    --text:#ece9e3;--muted:#a3a9b1;--faint:#7a818a;
+    --accent:#8bc493;--accent-ink:#0c1a0f;--accent-soft:#1c2a1f;
+    --trans-bg:#131a21;--trans-border:#34495c;--trans-ink:#a8b8c8;
+    --ok:#72c47f;--warn:#e7ad4c;--danger:#f2776c;
+    --ok-soft:#15281a;--warn-soft:#2d2313;--danger-soft:#341816;
+    --shadow:0 1px 2px rgba(0,0,0,.4);
+    --c-abertura:#73a7ec;--c-adoracao:#ad8cf2;--c-oracao:#4fc4b1;--c-palavra:#e5b05a;--c-ofertorio:#6fc273;--c-testemunho:#e88db6;--c-avisos:#95a6b9;--c-intervalo:#a4a9b1;--c-refeicao:#ee915d;--c-encerramento:#ef6e7c;--c-outro:#a2a6ad;--c-trans:#86a3bd;
+    --k-palco:#ab90f5;--k-som:#6eaaf0;--k-luz:#f0c654;--k-projecao:#52d0bd;--k-pessoas:#f39a64;--k-espaco:#a2c56f;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0e1013;--bg-glass:rgba(14,16,19,.88);--surface:#161a1f;--surface-2:#1b2027;--surface-3:#252b33;
+  --border:#2a3038;--border-strong:#3b434e;
+  --text:#ece9e3;--muted:#a3a9b1;--faint:#7a818a;
+  --accent:#8bc493;--accent-ink:#0c1a0f;--accent-soft:#1c2a1f;
+  --trans-bg:#131a21;--trans-border:#34495c;--trans-ink:#a8b8c8;
+  --ok:#72c47f;--warn:#e7ad4c;--danger:#f2776c;
+  --ok-soft:#15281a;--warn-soft:#2d2313;--danger-soft:#341816;
+  --shadow:0 1px 2px rgba(0,0,0,.4);
+  --c-abertura:#73a7ec;--c-adoracao:#ad8cf2;--c-oracao:#4fc4b1;--c-palavra:#e5b05a;--c-ofertorio:#6fc273;--c-testemunho:#e88db6;--c-avisos:#95a6b9;--c-intervalo:#a4a9b1;--c-refeicao:#ee915d;--c-encerramento:#ef6e7c;--c-outro:#a2a6ad;--c-trans:#86a3bd;
+  --k-palco:#ab90f5;--k-som:#6eaaf0;--k-luz:#f0c654;--k-projecao:#52d0bd;--k-pessoas:#f39a64;--k-espaco:#a2c56f;
+  color-scheme:dark;
+}
+.t-abertura{--tc:var(--c-abertura)}.t-adoracao{--tc:var(--c-adoracao)}.t-oracao{--tc:var(--c-oracao)}.t-palavra{--tc:var(--c-palavra)}.t-ofertorio{--tc:var(--c-ofertorio)}.t-testemunho{--tc:var(--c-testemunho)}.t-avisos{--tc:var(--c-avisos)}.t-intervalo{--tc:var(--c-intervalo)}.t-refeicao{--tc:var(--c-refeicao)}.t-encerramento{--tc:var(--c-encerramento)}.t-outro{--tc:var(--c-outro)}.t-trans{--tc:var(--c-trans)}
+.k-palco{--kc:var(--k-palco)}.k-som{--kc:var(--k-som)}.k-luz{--kc:var(--k-luz)}.k-projecao{--kc:var(--k-projecao)}.k-pessoas{--kc:var(--k-pessoas)}.k-espaco{--kc:var(--k-espaco)}
+
+/* ---------- Base ---------- */
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;-webkit-font-smoothing:antialiased}
+button,input,select,textarea{font:inherit;color:inherit}
+button{touch-action:manipulation}
+[hidden]{display:none!important}
+.num{font-variant-numeric:tabular-nums}
+.muted{color:var(--muted)}
+.grow{flex:1}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.ic{width:18px;height:18px;flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;vertical-align:middle}
+
+/* ---------- Botões ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:40px;padding:8px 14px;border-radius:10px;border:1px solid var(--border-strong);background:var(--surface);color:var(--text);font-weight:650;font-size:14px;cursor:pointer;white-space:nowrap;text-decoration:none;list-style:none}
+.btn:hover{background:var(--surface-2)}
+.btn:disabled{opacity:.45;cursor:default}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn.primary:hover{filter:brightness(1.06)}
+.btn.danger,.menu-pop .danger{color:var(--danger)}
+.btn.danger-solid{background:var(--danger);border-color:var(--danger);color:#fff}
+.btn.ghost{border-color:transparent;background:transparent}
+.btn.sm{min-height:34px;padding:5px 10px;font-size:13px}
+.btn.on{border-color:var(--accent);color:var(--accent)}
+.btn.warn{border-color:var(--warn);color:var(--warn)}
+.icon-btn{display:inline-grid;place-items:center;width:40px;height:40px;border-radius:10px;border:1px solid var(--border-strong);background:var(--surface);cursor:pointer;color:var(--text)}
+.icon-btn:hover{background:var(--surface-2)}
+.tool{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:36px;min-width:36px;padding:4px 8px;border:0;background:none;border-radius:8px;color:var(--muted);font-size:13px;font-weight:600;cursor:pointer}
+.tool:hover:not(:disabled){background:var(--surface-2);color:var(--text)}
+.tool:disabled{opacity:.3;cursor:default}
+.tool.danger:hover:not(:disabled){color:var(--danger)}
+
+/* ---------- Barra superior ---------- */
+.topbar{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:12px;padding:10px 16px;padding-top:max(10px,env(safe-area-inset-top));background:var(--bg-glass);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+.brand{display:flex;align-items:center;gap:10px;min-width:0;flex:1}
+.logo{width:30px;height:30px;color:var(--accent);flex:none}
+.brand-text{min-width:0;display:flex;flex-direction:column;line-height:1.15}
+.brand-text small{font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.brand-text strong{font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.seg{display:inline-flex;background:var(--surface-3);border-radius:999px;padding:3px;gap:2px;flex:none}
+.seg button{border:0;background:transparent;padding:7px 14px;border-radius:999px;font-weight:700;font-size:14px;color:var(--muted);cursor:pointer;display:inline-flex;align-items:center;gap:7px}
+.seg button[aria-pressed="true"]{background:var(--surface);color:var(--text);box-shadow:var(--shadow)}
+.rec{width:9px;height:9px;border-radius:50%;background:#e5484d;animation:pulse 1.6s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(229,72,77,.55)}70%{box-shadow:0 0 0 8px rgba(229,72,77,0)}100%{box-shadow:0 0 0 0 rgba(229,72,77,0)}}
+.top-actions{display:flex;align-items:center;gap:8px;flex:none}
+.menu{position:relative}
+.menu>summary::-webkit-details-marker{display:none}
+.menu-pop{position:absolute;right:0;top:calc(100% + 6px);width:290px;background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:0 12px 32px rgba(0,0,0,.2);padding:6px;z-index:30}
+.menu-pop button{display:flex;width:100%;align-items:center;gap:10px;padding:10px 12px;border:0;background:none;border-radius:8px;text-align:left;cursor:pointer;font-size:15px}
+.menu-pop button:hover{background:var(--surface-2)}
+.menu-pop hr{border:0;border-top:1px solid var(--border);margin:6px 4px}
+.menu-note{margin:6px 12px 6px;font-size:12.5px;color:var(--muted)}
+@media (max-width:900px){.bl{display:none}}
+@media (max-width:600px){.brand-text{display:none}.topbar{gap:8px;padding-left:12px;padding-right:12px}}
+@media (max-width:430px){.seg .sl{display:none}}
+
+/* ---------- Planeamento ---------- */
+.plan{max-width:1280px;margin:0 auto;padding:20px 16px 96px;display:grid;gap:20px}
+@media (min-width:1080px){.plan{grid-template-columns:330px minmax(0,1fr);align-items:start;gap:28px}.plan-aside{position:sticky;top:78px}}
+.plan-aside{display:grid;gap:16px;min-width:0}
+.plan-main{min-width:0}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:16px 18px;box-shadow:var(--shadow)}
+.kicker{font-size:11.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.event-card h1{font-size:22px;line-height:1.2;margin:4px 0 10px}
+.ev-line{display:flex;align-items:center;gap:8px;margin:4px 0;color:var(--muted);font-size:15px}
+.ev-more{margin-top:12px;border-top:1px solid var(--border);padding-top:10px}
+.ev-more summary{cursor:pointer;font-weight:700;font-size:14px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0;padding:0;list-style:none}
+.chips li{font-size:13px;background:var(--surface-3);border-radius:999px;padding:3px 10px}
+.ev-notes{white-space:pre-line;font-size:13.5px;color:var(--muted);margin:8px 0 0}
+.card-actions{margin-top:12px;display:flex;gap:8px;flex-wrap:wrap}
+.dc-head{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+.day-card h2{font-size:16px;margin:2px 0 0}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0 0}
+.stats div{background:var(--surface-2);border:1px solid var(--border);border-radius:10px;padding:8px 10px}
+.stats dt{font-size:12px;color:var(--muted);font-weight:700}
+.stats dd{margin:2px 0 0;font-size:21px;font-weight:800;font-variant-numeric:tabular-nums;line-height:1.2}
+.stats dd.over{color:var(--danger)}
+.limit-msg{margin-top:12px;padding:9px 12px;border-radius:10px;font-size:14px;font-weight:650;display:flex;gap:8px;align-items:center}
+.limit-msg.ok{background:var(--ok-soft);color:var(--ok)}
+.limit-msg.over{background:var(--danger-soft);color:var(--danger)}
+.limit-msg.none{background:var(--surface-2);color:var(--muted);font-weight:500}
+.day-tabs{display:flex;gap:8px;overflow-x:auto;padding:2px 2px 6px;margin:0 -2px 12px}
+.day-tab{flex:none;display:flex;flex-direction:column;align-items:flex-start;gap:2px;padding:8px 14px;border-radius:12px;border:1px solid var(--border);background:var(--surface);cursor:pointer;text-align:left}
+.day-tab b{font-size:15px}
+.day-tab span{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+.day-tab[aria-selected="true"]{border-color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent)}
+.day-add{flex:none;border:1px dashed var(--border-strong);background:transparent;border-radius:12px;padding:8px 14px;cursor:pointer;color:var(--muted);font-weight:700;display:flex;align-items:center;gap:6px}
+.day-add:hover{color:var(--accent);border-color:var(--accent)}
+.tl-header{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;margin-bottom:12px}
+.tl-header h2{margin:0;font-size:20px;line-height:1.25}
+.tl-header p{margin:3px 0 0;font-size:14px}
+
+/* Linha do tempo */
+.timeline{list-style:none;margin:0;padding:0}
+.tl-row{display:grid;grid-template-columns:58px 20px minmax(0,1fr);column-gap:10px;position:relative}
+.tl-time{text-align:right;font-variant-numeric:tabular-nums;font-weight:800;font-size:15px;padding-top:15px;line-height:1.15}
+.tl-time small{display:block;font-weight:600;font-size:12.5px;color:var(--muted);margin-top:2px}
+.tl-rail{position:relative}
+.tl-rail::before{content:"";position:absolute;left:9px;top:0;bottom:0;width:2px;background:var(--border-strong)}
+.timeline>.tl-row:first-child .tl-rail::before{top:20px}
+.tl-dot{position:absolute;left:3px;top:15px;width:14px;height:14px;border-radius:50%;background:var(--tc);box-shadow:0 0 0 3px var(--bg)}
+.tl-card{position:relative;margin:6px 0;background:var(--surface);border:1px solid var(--border);border-left:5px solid var(--tc);border-radius:12px;padding:10px 12px 8px 8px;box-shadow:var(--shadow)}
+.tl-head{display:flex;align-items:flex-start;gap:6px}
+.drag-handle{flex:none;width:34px;height:44px;margin:-4px 0;display:grid;place-items:center;border:0;background:none;color:var(--faint);cursor:grab;touch-action:none;border-radius:8px}
+.drag-handle:hover{background:var(--surface-2);color:var(--text)}
+.tl-main{flex:1;min-width:0;display:block;text-align:left;border:0;background:none;padding:2px 0;cursor:pointer}
+.type-chip{position:relative;display:inline-block;font-size:11.5px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--tc);padding:2px 8px;border-radius:6px;isolation:isolate}
+.type-chip::before{content:"";position:absolute;inset:0;background:var(--tc);opacity:.13;border-radius:inherit;z-index:-1}
+.tl-title{display:block;font-size:18px;font-weight:750;line-height:1.25;margin-top:4px}
+.tl-dur{flex:none;font-weight:800;font-variant-numeric:tabular-nums;background:var(--surface-3);border-radius:999px;padding:3px 10px;font-size:14px;margin-top:2px}
+.tl-body{padding-left:40px}
+.tl-meta{display:flex;flex-wrap:wrap;gap:4px 16px;margin-top:6px;color:var(--muted);font-size:14px}
+.tl-meta span{display:inline-flex;align-items:center;gap:6px}
+.tl-notes{margin:6px 0 0;font-size:14px;color:var(--muted);white-space:pre-line}
+.tl-tools{display:flex;flex-wrap:wrap;gap:2px;margin-top:6px}
+.is-over>.tl-time{color:var(--danger)}
+.flash .tl-card{animation:flash 1.4s ease}
+@keyframes flash{0%{box-shadow:0 0 0 4px var(--accent)}100%{box-shadow:var(--shadow)}}
+.tl-trans .tl-rail::before{background:repeating-linear-gradient(to bottom,var(--trans-border) 0 5px,transparent 5px 9px)}
+.tl-trans .tl-time{font-size:13px;font-weight:700;color:var(--trans-ink);padding-top:10px}
+.tl-trans .tl-time small{font-size:12px;color:var(--trans-ink);opacity:.8}
+.tl-tdot{position:absolute;left:5px;top:12px;width:10px;height:10px;transform:rotate(45deg);background:var(--trans-bg);border:2px solid var(--trans-border)}
+.tl-tcard{margin:3px 0 3px 22px;background:var(--trans-bg);border:1px dashed var(--trans-border);border-radius:10px;padding:5px 10px 6px;color:var(--trans-ink);font-size:14px}
+.tt-head{display:flex;align-items:center;gap:6px}
+.tt-main{display:flex;align-items:center;gap:8px;flex:1;min-width:0;border:0;background:none;padding:4px 0;cursor:pointer;text-align:left;color:inherit;flex-wrap:wrap}
+.tt-dur{font-variant-numeric:tabular-nums;font-weight:700;background:var(--surface);border:1px solid var(--trans-border);border-radius:999px;padding:1px 8px;font-size:12.5px}
+.tt-list{list-style:none;margin:3px 0 2px;padding:0;columns:250px 2;column-gap:22px}
+.tt-list li{break-inside:avoid;display:flex;gap:8px;align-items:baseline;padding:2px 0;font-size:13.5px}
+.tt-empty{border:0;background:none;color:var(--trans-ink);opacity:.85;font-size:13px;padding:0 0 4px;cursor:pointer;text-decoration:underline}
+.cat{flex:none;display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.04em;color:var(--kc);min-width:78px}
+.cat::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--kc);flex:none}
+.tl-endrow .tl-time{padding-top:6px}
+.tl-endrow .tl-rail::before{bottom:auto;height:10px}
+.tl-enddot{position:absolute;left:2px;top:8px;width:16px;height:16px;border-radius:50%;border:3px solid var(--text);background:var(--bg)}
+.is-over.tl-endrow .tl-enddot{border-color:var(--danger)}
+.tl-endlabel{padding:6px 0;font-size:15px}
+.danger-txt{color:var(--danger);font-weight:700;display:inline-flex;align-items:center;gap:4px}
+.add-block{margin:14px 0 0 88px;width:calc(100% - 88px);min-height:52px;border:2px dashed var(--border-strong);border-radius:12px;background:transparent;color:var(--muted);font-weight:700;font-size:15px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px}
+.add-block:hover{border-color:var(--accent);color:var(--accent)}
+.empty{text-align:center;padding:32px 16px}
+.empty p{margin:0 0 12px;color:var(--muted)}
+.tl-block.dragging{z-index:10}
+.tl-block.dragging .tl-card{box-shadow:0 16px 36px rgba(0,0,0,.28)}
+.tl-block.dragging .tl-time,.tl-block.dragging .tl-rail{opacity:.25}
+body.is-dragging{-webkit-user-select:none;user-select:none;cursor:grabbing}
+.drop-before::before,.drop-after::after{content:"";position:absolute;left:88px;right:0;height:4px;border-radius:2px;background:var(--accent);z-index:4}
+.drop-before::before{top:-3px}
+.drop-after::after{bottom:-3px}
+.legend{margin-top:28px}
+.legend h3{font-size:12.5px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:0 0 8px}
+.legend ul{list-style:none;margin:0 0 14px;padding:0;display:flex;flex-wrap:wrap;gap:8px 18px}
+.legend li{display:flex;align-items:center;gap:7px;font-size:14px}
+.legend .cat{min-width:0}
+.sw{width:12px;height:12px;border-radius:3px;background:var(--tc);display:inline-block;flex:none}
+@media (max-width:560px){
+  .tl-row{grid-template-columns:44px 16px minmax(0,1fr);column-gap:8px}
+  .tl-time{font-size:14px}
+  .tl-rail::before{left:7px}.tl-dot{left:1px}.tl-tdot{left:3px}.tl-enddot{left:0}
+  .tl-body{padding-left:0}
+  .tool span{display:none}
+  .tl-tcard{margin-left:0}
+  .add-block{margin-left:0;width:100%}
+  .drop-before::before,.drop-after::after{left:68px}
+}
+
+/* ---------- Diálogos ---------- */
+dialog{border:0;padding:0;border-radius:16px;background:var(--surface);color:var(--text);width:min(580px,calc(100vw - 24px));max-width:none;max-height:calc(100vh - 32px);box-shadow:0 20px 60px rgba(0,0,0,.35)}
+dialog.wide{width:min(860px,calc(100vw - 24px))}
+dialog::backdrop{background:rgba(10,12,16,.55)}
+.dlg-form{display:flex;flex-direction:column;max-height:inherit}
+.dlg-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 20px 6px}
+.dlg-head h2{margin:0;font-size:20px}
+.dlg-head .icon-btn{border-color:transparent}
+.dlg-body{padding:8px 20px 18px;overflow:auto;display:grid;gap:14px;min-height:0;flex:1 1 auto}
+.dlg-foot{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding:12px 20px;border-top:1px solid var(--border);background:var(--surface-2);border-radius:0 0 16px 16px}
+.field{display:grid;gap:6px;min-width:0}
+.field>span{font-size:13px;font-weight:700;color:var(--muted)}
+.field small{font-weight:500}
+input[type=text],input:not([type]),input[type=number],input[type=date],input[type=time],select,textarea{width:100%;min-height:44px;padding:9px 12px;border:1px solid var(--border-strong);border-radius:10px;background:var(--surface);color:var(--text)}
+textarea{resize:vertical;min-height:88px;line-height:1.4}
+input.invalid{border-color:var(--danger);box-shadow:0 0 0 3px var(--danger-soft)}
+.row2{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(210px,1fr))}
+.row3{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
+.stepper{display:flex}
+.stepper input{text-align:center;border-radius:0;min-width:0;font-weight:700;font-variant-numeric:tabular-nums}
+.stepper button{min-width:52px;border:1px solid var(--border-strong);background:var(--surface-2);cursor:pointer;font-weight:700}
+.stepper button:first-child{border-radius:10px 0 0 10px;border-right:0}
+.stepper button:last-child{border-radius:0 10px 10px 0;border-left:0}
+.hint{font-size:13px;color:var(--muted);margin:0;display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.trans-route{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:0;font-weight:700}
+.trans-route span{display:inline-flex;align-items:center;gap:6px}
+.chk-edit{border:1px solid var(--border);border-radius:12px;padding:12px;margin:0;min-width:0}
+.chk-edit legend{font-weight:800;font-size:14px;padding:0 6px}
+.chk-rows{list-style:none;margin:0 0 10px;padding:0;display:grid;gap:8px}
+.chk-rows li{display:grid;grid-template-columns:180px minmax(0,1fr) auto auto auto;gap:6px;align-items:center}
+@media (max-width:640px){.chk-rows li{grid-template-columns:minmax(0,1fr) auto auto auto}.chk-rows li select{grid-column:1/-1}}
+.suggest{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-top:12px;font-size:13px}
+.chip{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--border);background:var(--surface-2);border-radius:999px;padding:5px 11px;font-size:13px;cursor:pointer}
+.chip:hover{border-color:var(--accent)}
+.chip .cat{min-width:0;font-size:0;gap:0}
+.ask-msg{margin:0;font-size:16px}
+
+/* ---------- Aviso flutuante ---------- */
+#toast{position:fixed;left:50%;bottom:max(20px,env(safe-area-inset-bottom));transform:translate(-50%,160%);background:#1f2227;color:#fff;border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:10px 12px 10px 16px;display:flex;align-items:center;gap:12px;box-shadow:0 10px 30px rgba(0,0,0,.3);z-index:60;transition:transform .22s ease;max-width:calc(100vw - 32px);font-size:15px}
+#toast.show{transform:translate(-50%,0)}
+#toast button{border:0;background:rgba(255,255,255,.16);color:#fff;font-weight:700;padding:7px 12px;border-radius:8px;cursor:pointer;white-space:nowrap}
+
+/* ---------- Ao vivo ---------- */
+.live{max-width:1500px;margin:0 auto;padding:16px;display:grid;gap:16px;grid-template-columns:minmax(0,1fr);grid-template-areas:"clock" "status" "now" "next" "prog"}
+@media (min-width:920px){.live{grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);grid-template-areas:"clock status" "now next" "prog prog";padding:20px}}
+.lv-card{background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:18px 22px;min-width:0}
+.lv-clock{grid-area:clock;display:flex;flex-direction:column;justify-content:center;gap:8px}
+.lv-time{font-size:clamp(60px,9vw,132px);font-weight:800;line-height:.95;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.lv-time .sec{font-size:.42em;color:var(--muted);margin-left:.08em;letter-spacing:0}
+.lv-date{font-size:18px;color:var(--muted);display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.lv-daypick{display:inline-flex;align-items:center;gap:8px;font-size:15px}
+.lv-daypick select{width:auto;min-height:40px;padding:6px 10px}
+.lv-status{grid-area:status;display:flex;flex-direction:column;justify-content:center;gap:10px}
+.lv-label{font-size:13px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.lv-delay{font-size:clamp(32px,3.8vw,52px);font-weight:800;line-height:1.05}
+.lv-delay.good{color:var(--ok)}.lv-delay.warn{color:var(--warn)}.lv-delay.bad{color:var(--danger)}
+.lv-endline{font-size:19px}
+.lv-endline b{font-variant-numeric:tabular-nums;font-size:1.15em}
+.lv-alert{padding:10px 14px;border-radius:12px;font-weight:700;font-size:17px;display:flex;gap:8px;align-items:center}
+.lv-alert.bad{background:var(--danger-soft);color:var(--danger)}
+.lv-alert.ok{background:var(--ok-soft);color:var(--ok)}
+.lv-alert.info{background:var(--surface-2);color:var(--muted);font-weight:600;font-size:15px}
+.lv-now{grid-area:now;border-left:10px solid var(--tc,var(--border-strong));display:flex;flex-direction:column;gap:14px}
+.lv-top{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;align-items:baseline}
+.lv-planned{font-size:16px;color:var(--muted);font-variant-numeric:tabular-nums}
+.lv-title{font-size:clamp(30px,3.6vw,50px);line-height:1.08;margin:0}
+.lv-meta{display:flex;flex-wrap:wrap;gap:6px 20px;font-size:19px;color:var(--muted);margin:0}
+.lv-meta span{display:inline-flex;gap:8px;align-items:center}
+.lv-meta .ic{width:20px;height:20px}
+.lv-countrow{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.lv-countlabel{font-size:15px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.lv-count{font-size:clamp(72px,10vw,150px);font-weight:800;line-height:.95;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.lv-count.over{color:var(--danger)}
+.lv-startinfo{font-size:17px;color:var(--muted);text-align:right;line-height:1.5}
+.lv-startinfo b{color:var(--text)}
+.lv-bar{height:12px;background:var(--surface-3);border-radius:99px;overflow:hidden}
+.lv-bar>i{display:block;height:100%;width:0;background:var(--tc,var(--accent));border-radius:inherit;transition:width .9s linear}
+.lv-bar.over>i{background:var(--danger)}
+.lv-adjust{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.lv-adjust .btn{min-width:64px;min-height:54px;font-size:20px}
+.lv-adjval{min-width:96px;text-align:center;font-weight:800;font-size:18px;font-variant-numeric:tabular-nums}
+.lv-adjlabel{font-size:15px;color:var(--muted);font-weight:700;margin-right:4px}
+.lv-notes{margin:0;font-size:17px;color:var(--muted);white-space:pre-line;border-top:1px solid var(--border);padding-top:12px}
+.lv-actions{display:flex;gap:10px;margin-top:auto;flex-wrap:wrap}
+.lv-advance{flex:1 1 260px;min-height:78px;font-size:24px;border-radius:14px;flex-direction:column;gap:2px;line-height:1.15;white-space:normal;text-align:center}
+.lv-advance .row{display:inline-flex;align-items:center;gap:10px}
+.lv-advance small{font-size:15px;font-weight:600;opacity:.85}
+.lv-advance .ic{width:26px;height:26px}
+.lv-undo{min-height:78px;border-radius:14px;font-size:16px;flex:0 0 auto}
+.lv-next{grid-area:next;display:flex;flex-direction:column;gap:14px}
+.lv-chk{background:var(--trans-bg);border:1px dashed var(--trans-border);border-radius:14px;padding:12px 14px}
+.lv-chk-head{display:flex;justify-content:space-between;gap:8px;align-items:baseline;font-size:17px;color:var(--trans-ink)}
+.lv-chk-count{font-variant-numeric:tabular-nums;font-weight:800}
+.lv-chk-desc{margin:4px 0 6px;color:var(--trans-ink);font-size:16px}
+.lv-check{list-style:none;margin:6px 0 0;padding:0;display:grid;gap:2px}
+.lv-check label{display:flex;gap:12px;align-items:center;min-height:52px;padding:6px 8px;border-radius:10px;cursor:pointer;font-size:19px;line-height:1.3}
+.lv-check label:hover{background:var(--surface)}
+.lv-check input{width:28px;height:28px;flex:none;accent-color:var(--accent);margin:0}
+.lv-check .cat{min-width:86px;font-size:12px}
+.lv-check li.done .txt{text-decoration:line-through;color:var(--muted)}
+.lv-nb{display:grid;grid-template-columns:auto minmax(0,1fr);gap:16px;align-items:start;border-left:6px solid var(--tc);padding-left:14px}
+.lv-nb-time{font-size:30px;font-weight:800;font-variant-numeric:tabular-nums;line-height:1}
+.lv-nb-time small{display:block;font-size:14px;color:var(--muted);font-weight:600;margin-top:6px}
+.lv-nb h3{font-size:26px;margin:6px 0 6px;line-height:1.15}
+.lv-nb .lv-meta{font-size:17px}
+.lv-after{margin:0;font-size:16px;color:var(--muted);border-top:1px solid var(--border);padding-top:10px}
+.lv-prog{grid-area:prog}
+.lv-prog-head{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:8px}
+.lv-prog-head h3{margin:0;font-size:18px}
+.lv-list{list-style:none;margin:0;padding:0}
+.lv-row{display:grid;grid-template-columns:72px 84px minmax(0,1fr) 96px 64px;gap:10px;align-items:center;padding:10px 10px;border-bottom:1px solid var(--border);font-size:17px;border-left:5px solid var(--tc,transparent);font-variant-numeric:tabular-nums}
+.lv-row.head{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);border-left-color:transparent;padding-top:4px}
+.lv-row.done{opacity:.55}
+.lv-row.current{background:var(--surface-2);font-weight:700;border-radius:8px}
+.lv-row small{display:block;color:var(--muted);font-size:14px;font-weight:500}
+.lv-row .proj{color:var(--muted);font-style:italic}
+.lv-row .c3{min-width:0}
+.dl-pos{color:var(--warn);font-weight:700}.dl-bad{color:var(--danger);font-weight:700}.dl-neg{color:var(--ok);font-weight:700}
+.lv-hint{font-size:13px;margin:10px 0 0}
+@media (max-width:640px){.lv-row{grid-template-columns:54px 62px minmax(0,1fr) 46px;font-size:15px;gap:8px}.lv-row .c4{display:none}.lv-card{padding:16px}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+/* ---------- Impressão ---------- */
+#print-root{display:none}
+@media print{
+  @page{size:A4;margin:10mm 11mm 11mm}
+  :root:root:root{--c-abertura:#2f6db5;--c-adoracao:#7449c0;--c-oracao:#1b8475;--c-palavra:#a66a0f;--c-ofertorio:#3b8a3e;--c-testemunho:#b8507f;--c-avisos:#56687b;--c-intervalo:#7f848d;--c-refeicao:#bf5a26;--c-encerramento:#ad3443;--c-outro:#6b6f76;color-scheme:light}
+  html,body{background:#fff!important;color:#111!important}
+  body{font-size:9.5pt;line-height:1.35}
+  #app,#toast,dialog{display:none!important}
+  #print-root{display:block}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .pr-day{break-after:page}
+  .pr-day:last-child{break-after:auto}
+  .pr-head{display:flex;justify-content:space-between;align-items:flex-end;gap:12pt;border-bottom:2pt solid #111;padding-bottom:5pt;margin-bottom:7pt}
+  .pr-event{font-size:16pt;font-weight:800;line-height:1.15}
+  .pr-dayline{font-size:10.5pt;color:#333;margin-top:2pt}
+  .pr-stats{font-size:9.5pt;text-align:right;white-space:nowrap}
+  .pr-over{color:#b42318;font-weight:700}
+  .pr-table{width:100%;border-collapse:collapse;table-layout:fixed}
+  .pr-table th{text-align:left;font-size:8pt;text-transform:uppercase;letter-spacing:.04em;color:#444;border-bottom:1pt solid #888;padding:3pt 5pt}
+  .pr-table td{padding:4pt 5pt;vertical-align:top}
+  .pr-grp{break-inside:avoid}
+  .pr-block td{border-top:.8pt solid #999;font-size:8.5pt}
+  .pr-block td:first-child{border-left:4pt solid var(--tc);font-weight:700;white-space:nowrap;font-size:9pt}
+  .pr-title b{font-size:10pt}
+  .pr-type{font-size:7pt;text-transform:uppercase;color:#666;margin-left:4pt;font-weight:700;letter-spacing:.04em}
+  .pr-notes{font-size:8pt;color:#555;white-space:pre-line;margin-top:2pt}
+  .pr-trans td{background:#f1f3f6;font-size:8pt;color:#333;padding-top:3pt;padding-bottom:3pt}
+  .pr-trans td:first-child{border-left:4pt solid #c3cad3;color:#555;white-space:nowrap}
+  .pr-th{font-weight:700;color:#3f4d5c}
+  .pr-chk{list-style:none;margin:2pt 0 0;padding:0;columns:2;column-gap:14pt}
+  .pr-chk li{break-inside:avoid;padding:.8pt 0}
+  .pr-box{display:inline-block;width:8pt;height:8pt;border:.9pt solid #333;border-radius:1.5pt;vertical-align:-1pt;margin-right:4pt;background:#fff}
+  .pr-cat{font-weight:800;font-size:7pt;text-transform:uppercase;color:#555;margin-right:3pt;letter-spacing:.03em}
+  .pr-foot{margin-top:8pt;font-size:7.5pt;color:#666;display:flex;justify-content:space-between}
+}
+</style>
+</head>
+<body>
+<div id="app">
+  <header class="topbar" id="topbar"></header>
+  <main id="view-plan"></main>
+  <main id="view-live" hidden></main>
+</div>
+<div id="print-root"></div>
+<dialog id="dlg"></dialog>
+<div id="toast" role="status" aria-live="polite"></div>
+<input type="file" id="import-file" accept=".json,application/json" hidden>
+<noscript><p style="padding:24px">Esta página precisa de JavaScript para funcionar.</p></noscript>
+<script>
+(() => {
+'use strict';
+
+/* ================= Constantes ================= */
+const STORAGE_KEY = 'selah-alinhamento-v1';
+
+const TYPES = [
+  { id: 'abertura', label: 'Abertura', short: 'Abertura' },
+  { id: 'adoracao', label: 'Adoração / louvor', short: 'Adoração' },
+  { id: 'oracao', label: 'Oração / intercessão', short: 'Oração' },
+  { id: 'palavra', label: 'Palavra / pregação', short: 'Palavra' },
+  { id: 'ofertorio', label: 'Ofertório', short: 'Ofertório' },
+  { id: 'testemunho', label: 'Testemunho', short: 'Testemunho' },
+  { id: 'avisos', label: 'Avisos', short: 'Avisos' },
+  { id: 'intervalo', label: 'Intervalo', short: 'Intervalo' },
+  { id: 'refeicao', label: 'Refeição', short: 'Refeição' },
+  { id: 'encerramento', label: 'Encerramento', short: 'Encerramento' },
+  { id: 'outro', label: 'Outro', short: 'Outro' },
+];
+const TYPE_IDS = new Set(TYPES.map(t => t.id));
+const typeOf = id => TYPES.find(t => t.id === id) || TYPES[TYPES.length - 1];
+const typeLabel = id => typeOf(id).label;
+
+const CATS = [
+  { id: 'palco', label: 'Palco e equipamento', short: 'Palco' },
+  { id: 'som', label: 'Som', short: 'Som' },
+  { id: 'luz', label: 'Luz', short: 'Luz' },
+  { id: 'projecao', label: 'Projeção', short: 'Projeção' },
+  { id: 'pessoas', label: 'Pessoas', short: 'Pessoas' },
+  { id: 'espaco', label: 'Espaço', short: 'Espaço' },
+];
+const CAT_IDS = new Set(CATS.map(c => c.id));
+const catShort = id => (CATS.find(c => c.id === id) || CATS[0]).short;
+
+const SUGGESTIONS = [
+  ['som', 'Trocar microfones'],
+  ['projecao', 'Mudar slides'],
+  ['luz', 'Baixar luzes'],
+  ['palco', 'Banda sai do palco'],
+  ['pessoas', 'Crianças seguem para a sala infantil'],
+  ['som', 'Música de fundo'],
+  ['pessoas', 'Avisar o próximo responsável'],
+  ['espaco', 'Abrir ou fechar acessos'],
+];
+
+const WD = ['domingo', 'segunda-feira', 'terça-feira', 'quarta-feira', 'quinta-feira', 'sexta-feira', 'sábado'];
+const WD_S = ['dom', 'seg', 'ter', 'qua', 'qui', 'sex', 'sáb'];
+const MO = ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'];
+const MO_S = ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez'];
+
+const ICONS = {
+  plus: '<path d="M12 5v14M5 12h14"/>',
+  up: '<path d="m18 15-6-6-6 6"/>',
+  down: '<path d="m6 9 6 6 6-6"/>',
+  copy: '<rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"/>',
+  edit: '<path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/>',
+  trash: '<path d="M3 6h18M8 6V4h8v2M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6M10 11v6M14 11v6"/>',
+  grip: '<circle cx="9" cy="6" r="1.6" fill="currentColor" stroke="none"/><circle cx="15" cy="6" r="1.6" fill="currentColor" stroke="none"/><circle cx="9" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="15" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="9" cy="18" r="1.6" fill="currentColor" stroke="none"/><circle cx="15" cy="18" r="1.6" fill="currentColor" stroke="none"/>',
+  user: '<circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/>',
+  pin: '<path d="M12 21s-7-6.1-7-11.5A7 7 0 0 1 19 9.5C19 14.9 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/>',
+  clock: '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
+  calendar: '<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/>',
+  swap: '<path d="M4 8h14l-4-4M20 16H6l4 4"/>',
+  print: '<path d="M6 9V3h12v6"/><rect x="3" y="9" width="18" height="8" rx="2"/><path d="M6 14h12v7H6z"/>',
+  download: '<path d="M12 3v12M7 10l5 5 5-5M4 21h16"/>',
+  upload: '<path d="M12 21V9M7 14l5-5 5 5M4 3h16"/>',
+  reset: '<path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/>',
+  database: '<ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/>',
+  sun: '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>',
+  moon: '<path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/>',
+  auto: '<circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 1 0 18Z" fill="currentColor"/>',
+  play: '<path d="M7 4v16l13-8Z"/>',
+  next: '<path d="M5 4v16l11-8ZM19 5v14"/>',
+  undo: '<path d="M9 14 4 9l5-5"/><path d="M4 9h11a5 5 0 0 1 0 10h-3"/>',
+  list: '<path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/>',
+  maximize: '<path d="M8 3H5a2 2 0 0 0-2 2v3M21 8V5a2 2 0 0 0-2-2h-3M3 16v3a2 2 0 0 0 2 2h3M16 21h3a2 2 0 0 0 2-2v-3"/>',
+  eye: '<path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/>',
+  x: '<path d="M18 6 6 18M6 6l12 12"/>',
+  alert: '<path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/><path d="M12 9v4M12 17h.01"/>',
+  check: '<path d="m5 12 5 5L20 7"/>',
+  arrow: '<path d="M5 12h14M13 6l6 6-6 6"/>',
+};
+const LOGO = '<svg class="logo" viewBox="0 0 32 32" aria-hidden="true"><path d="M5 13.5 16 4l11 9.5V28H5Z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/><path d="M11 18h10M11 22.5h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>';
+
+/* ================= Utilitários ================= */
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
+const esc = v => String(v == null ? '' : v).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
+const uid = () => Math.random().toString(36).slice(2, 8) + Date.now().toString(36).slice(-4);
+const now = () => Date.now();
+const str = v => (typeof v === 'string' ? v : v == null ? '' : String(v));
+const clampInt = (v, min, max) => { const n = Math.round(Number(v)); return Number.isFinite(n) ? Math.min(max, Math.max(min, n)) : min; };
+const pad2 = n => String(n).padStart(2, '0');
+const cap = s => (s ? s.charAt(0).toUpperCase() + s.slice(1) : s);
+const icon = (name, cls) => `<svg class="ic${cls ? ' ' + cls : ''}" viewBox="0 0 24 24" aria-hidden="true" focusable="false">${ICONS[name] || ''}</svg>`;
+const catTag = (cat, label) => `<span class="cat k-${esc(cat)}">${esc(label || catShort(cat))}</span>`;
+const plural = (n, one, many) => `${n} ${n === 1 ? one : many}`;
+
+function parseHM(s) { const m = /^(\d{1,2}):(\d{2})/.exec(str(s)); if (!m) return null; const h = +m[1], mi = +m[2]; return h < 24 && mi < 60 ? h * 60 + mi : null; }
+function normHM(s) { const v = parseHM(s); return v == null ? '' : pad2(Math.floor(v / 60)) + ':' + pad2(v % 60); }
+function fmtHM(mins) { const m = Math.round(mins); const d = Math.floor(m / 1440); const r = ((m % 1440) + 1440) % 1440; return pad2(Math.floor(r / 60)) + ':' + pad2(r % 60) + (d > 0 ? ' (+' + d + ')' : ''); }
+function fmtClock(ms) { const d = new Date(ms); return pad2(d.getHours()) + ':' + pad2(d.getMinutes()); }
+function fmtDur(mins) { mins = Math.round(mins); if (mins < 60) return mins + ' min'; const h = Math.floor(mins / 60), m = mins % 60; return m ? h + ' h ' + m + ' min' : h + ' h'; }
+function fmtCount(ms) {
+  const s = Math.max(0, Math.ceil(ms / 1000));
+  const h = Math.floor(s / 3600), m = Math.floor((s % 3600) / 60), x = s % 60;
+  if (h >= 24) return Math.floor(h / 24) + ' d ' + (h % 24) + ' h';
+  return h ? h + ':' + pad2(m) + ':' + pad2(x) : m + ':' + pad2(x);
+}
+function isoToDate(iso) { const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(str(iso)); return m ? new Date(+m[1], +m[2] - 1, +m[3]) : null; }
+function toISO(d) { return d.getFullYear() + '-' + pad2(d.getMonth() + 1) + '-' + pad2(d.getDate()); }
+const todayISO = () => toISO(new Date(now()));
+function addDays(iso, n) { const d = isoToDate(iso); if (!d) return ''; d.setDate(d.getDate() + n); return toISO(d); }
+function longDate(iso) { const d = isoToDate(iso); return d ? `${WD[d.getDay()]}, ${d.getDate()} de ${MO[d.getMonth()]} de ${d.getFullYear()}` : 'sem data definida'; }
+function shortDate(iso) { const d = isoToDate(iso); return d ? `${WD_S[d.getDay()]} ${d.getDate()} ${MO_S[d.getMonth()]}` : 'sem data'; }
+function longDateMs(ms) { const d = new Date(ms); return `${WD[d.getDay()]}, ${d.getDate()} de ${MO[d.getMonth()]}`; }
+function fmtStamp(d) { return `${pad2(d.getDate())}/${pad2(d.getMonth() + 1)}/${d.getFullYear()} ${pad2(d.getHours())}:${pad2(d.getMinutes())}`; }
+const slug = s => str(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 40) || 'evento';
+
+/* ================= Dados de exemplo ================= */
+function exampleState() {
+  const CENTRO = 'Círculo central (banda 360º)';
+  const B = (title, type, duration, owner, place, notes = '') => ({ id: uid(), title, type, duration, owner, place, notes });
+  const blocks = [
+    B('Abertura + intercessão', 'abertura', 30, 'Pr. Jacinto · Pra. Marta · Pr. Caetano (sugestão)', CENTRO,
+      'Período de intercessão / aquecimento: cada intercessor ora por um tema diferente. Nomes em sugestão, por confirmar.\nImportante ter fundo musical durante todo o período (possivelmente a Nena, por confirmar).'),
+    B('Adoração — INC', 'adoracao', 40, 'Louvor INC', CENTRO),
+    B('Oração — intercessão em trios', 'oracao', 10, 'Pr. Leo (sugestão)', 'Plateia (anéis 1 a 3)',
+      'Dinâmica de intercessão em trios no público.\nSugestão: aproveitar estes minutos para trocar de banda com discrição (INC → ZION/Altomonte).'),
+    B('Adoração — ZION / Altomonte', 'adoracao', 40, 'Louvor ZION / Altomonte', CENTRO),
+    B('Palavra — Tabernáculo', 'palavra', 20, 'Pra. Eunice', CENTRO, 'Mensagem: Tabernáculo.'),
+    B('Adoração — CCFV', 'adoracao', 40, 'Louvor CCFV', CENTRO),
+    B('Encerramento', 'encerramento', 10, 'A definir', CENTRO,
+      'Oração final e bênção; saída organizada pelos 4 corredores radiais.\nO programa só indica o início (21h30): os 10 min são um valor de exemplo.'),
+  ];
+  const T = (desc, items) => ({ duration: 0, desc, items: items.map(([cat, text]) => ({ id: uid(), cat, text })) });
+  const list = [
+    T('Intercessores saem, o Louvor INC assume', [
+      ['pessoas', 'Intercessores devolvem os microfones e saem pelo corredor radial'],
+      ['som', 'Fundo musical termina em fade; abrir os canais do INC'],
+      ['palco', 'INC em posição no círculo: bateria, teclado, baixo, guitarra e vozes 1–4'],
+      ['luz', 'Moving heads: ligar os feixes azuis de contraluz'],
+      ['projecao', 'Letras: carregar o alinhamento do INC'],
+    ]),
+    T('Pr. Leo entra; a banda fica num pad suave', [
+      ['som', 'Microfone sem fios do Pr. Leo ligado e testado'],
+      ['som', 'INC baixa para um pad suave durante a oração'],
+      ['luz', 'Tubos LED a 50%; luz quente (BT 200TW) no centro'],
+      ['pessoas', 'Equipa de apoio ajuda a formar trios nos 3 anéis'],
+      ['palco', 'ZION/Altomonte pronto junto ao círculo para a troca'],
+    ]),
+    T('Troca de banda: INC sai, ZION/Altomonte entra', [
+      ['palco', 'Troca de músicos (confirmar instrumentos partilhados: bateria e teclado)'],
+      ['som', 'Carregar a cena de mistura do ZION/Altomonte; fechar o microfone do Pr. Leo'],
+      ['luz', 'Repor os tubos LED a 100% e os moving heads'],
+      ['projecao', 'Letras: alinhamento do ZION/Altomonte'],
+    ]),
+    T('A banda sai; a Pra. Eunice vem ao centro', [
+      ['som', 'Microfone da Pra. Eunice (headset ou lapela) ligado e testado'],
+      ['pessoas', 'Banda sai do círculo; fica só o teclado para fundo suave'],
+      ['luz', 'Luz quente no centro; moving heads parados'],
+      ['palco', 'Água e estante leve para a pregadora, se pedir'],
+    ]),
+    T('O Louvor CCFV entra durante o apelo final', [
+      ['palco', 'CCFV entra no círculo durante o apelo final'],
+      ['som', 'Cena de mistura do CCFV; fechar o microfone da pregadora quando sair'],
+      ['luz', 'Repor o ambiente de adoração: tubos LED e feixes azuis'],
+      ['projecao', 'Letras: alinhamento do CCFV'],
+    ]),
+    T('Preparar a saída em segurança', [
+      ['som', 'Microfone para a oração final e avisos'],
+      ['luz', 'Subir a luz geral (PartyPar da fachada e da escadaria) para a saída'],
+      ['pessoas', 'Equipa de apoio nos 4 corredores radiais para orientar a saída'],
+      ['espaco', 'Zonas PMR: acompanhar a saída de quem usa cadeira de rodas e dos acompanhantes'],
+    ]),
+  ];
+  const transitions = {};
+  list.forEach((t, i) => { transitions[blocks[i].id + '>' + blocks[i + 1].id] = t; });
+  return {
+    version: 1,
+    event: {
+      name: 'Selah - Prayer House Céus abertos',
+      location: 'Igreja CCFV · Lagos',
+      spaces: [CENTRO, 'Plateia (anéis 1 a 3)', 'Corredores radiais (4)', 'Circulação periférica', 'Zonas PMR 1–4', 'Torres de truss (3)', 'Escadaria', 'Fachada', 'Jardim — árvores e sebes', 'Mesa de som (a definir)'],
+      notes: 'Banda 360º no centro (círculo de Ø 8 m): bateria, teclado, baixo, guitarra e vozes 1–4, voltados para dentro.\n'
+        + 'Público em 3 anéis e 4 sectores, com 4 corredores radiais de 1,50 m: 120 lugares (116 cadeiras + 4 espaços PMR, cada um com acompanhante).\n'
+        + 'Luz: BT 200TW nas torres (luz principal quente, LEE 134) · 2× Neewer (fill nas vozes) · 7 tubos LED 134 cm · 2 moving heads (contraluz azul) · 16 PartyPar (6 na fachada e 2 na escadaria em âmbar; 4 nas árvores e 4 nas sebes em azul) · velas LED opcionais.\n'
+        + 'Atenção: o plano de luz prevê 3 BT 200TW, mas o inventário conhecido só tem 2 — confirmar.\n'
+        + 'Por confirmar no local: entradas e saídas, percursos de evacuação, desníveis e bases das torres.\n'
+        + 'A hora limite (21:45) é um valor de exemplo.',
+    },
+    days: [{ id: uid(), label: 'Dia 1', date: '2026-10-31', start: '18:30', limit: '21:45', blocks, transitions }],
+  };
+}
+
+/* ================= Estado e persistência ================= */
+let state, live, settings;
+let storageOk = true, lastSaved = null, saveTimer = null, flashId = null;
+const uiOpen = {};
+
+const emptyLive = () => ({ dayId: null, base: null, startedAt: null, endedAt: null, currentKey: null, starts: {}, adjust: {}, checks: {}, history: [] });
+const ID_RE = /^[A-Za-z0-9_-]{1,40}$/;
+const KEY_RE = /^[A-Za-z0-9_-]{1,40}>[A-Za-z0-9_-]{1,40}$/;
+
+function normTrans(t, seen) {
+  return {
+    duration: clampInt(t.duration, 0, 600),
+    desc: str(t.desc).trim(),
+    items: (Array.isArray(t.items) ? t.items : []).filter(x => x && typeof x === 'object' && str(x.text).trim()).map(x => {
+      const id = ID_RE.test(str(x.id)) && !seen.has(x.id) ? x.id : uid();
+      seen.add(id);
+      return { id, cat: CAT_IDS.has(x.cat) ? x.cat : 'palco', text: str(x.text).trim() };
+    }),
+  };
+}
+
+function normalizeState(s) {
+  if (!s || typeof s !== 'object' || !Array.isArray(s.days)) return null;
+  const ev = s.event && typeof s.event === 'object' ? s.event : {};
+  const seen = new Set();
+  const okId = v => { const id = ID_RE.test(str(v)) && !seen.has(v) ? v : uid(); seen.add(id); return id; };
+  const days = s.days.filter(d => d && typeof d === 'object').map(d => {
+    const blocks = (Array.isArray(d.blocks) ? d.blocks : []).filter(b => b && typeof b === 'object').map(b => ({
+      id: okId(b.id),
+      title: str(b.title).trim() || 'Sem título',
+      type: TYPE_IDS.has(b.type) ? b.type : 'outro',
+      duration: clampInt(b.duration, 0, 1440),
+      owner: str(b.owner).trim(), place: str(b.place).trim(), notes: str(b.notes).trim(),
+    }));
+    const transitions = {};
+    const src = d.transitions && typeof d.transitions === 'object' ? d.transitions : {};
+    Object.keys(src).forEach(k => { const t = src[k]; if (t && typeof t === 'object' && KEY_RE.test(k)) transitions[k] = normTrans(t, seen); });
+    return {
+      id: okId(d.id), label: str(d.label).trim(),
+      date: /^\d{4}-\d{2}-\d{2}$/.test(str(d.date)) ? d.date : '',
+      start: normHM(d.start) || '18:00', limit: normHM(d.limit), blocks, transitions,
+    };
+  });
+  if (!days.length) days.push({ id: uid(), label: '', date: '', start: '18:00', limit: '', blocks: [], transitions: {} });
+  return {
+    version: 1,
+    event: {
+      name: str(ev.name).trim() || 'Evento sem nome',
+      location: str(ev.location).trim(),
+      spaces: Array.isArray(ev.spaces) ? ev.spaces.map(x => str(x).trim()).filter(Boolean) : [],
+      notes: str(ev.notes).trim(),
+    },
+    days,
+  };
+}
+
+function normalizeLive(l) {
+  if (!l || typeof l !== 'object') return emptyLive();
+  const num = v => (typeof v === 'number' && isFinite(v) ? v : null);
+  const nums = o => { const r = {}; if (o && typeof o === 'object') Object.keys(o).forEach(k => { if (typeof o[k] === 'number' && isFinite(o[k])) r[k] = o[k]; }); return r; };
+  const checks = {};
+  if (l.checks && typeof l.checks === 'object') Object.keys(l.checks).forEach(k => { if (l.checks[k]) checks[k] = true; });
+  return {
+    dayId: typeof l.dayId === 'string' ? l.dayId : null,
+    base: num(l.base), startedAt: num(l.startedAt), endedAt: num(l.endedAt),
+    currentKey: typeof l.currentKey === 'string' ? l.currentKey : null,
+    starts: nums(l.starts), adjust: nums(l.adjust), checks,
+    history: Array.isArray(l.history) ? l.history.filter(h => h && (h.type === 'end' || (h.type === 'adv' && typeof h.prev === 'string'))).slice(-500) : [],
+  };
+}
+
+function load() {
+  let data = null;
+  try { const raw = localStorage.getItem(STORAGE_KEY); if (raw) data = JSON.parse(raw); } catch (_) { storageOk = false; }
+  state = (data && normalizeState(data.state)) || exampleState();
+  live = normalizeLive(data && data.live);
+  const s = data && data.settings && typeof data.settings === 'object' ? data.settings : {};
+  const th = v => (['auto', 'light', 'dark'].includes(v) ? v : null);
+  settings = {
+    mode: s.mode === 'live' ? 'live' : 'plan',
+    themePlan: th(s.themePlan) || 'auto',
+    themeLive: th(s.themeLive) || 'dark',
+    dayId: typeof s.dayId === 'string' ? s.dayId : null,
+    liveDayId: typeof s.liveDayId === 'string' ? s.liveDayId : null,
+    wake: s.wake !== false,
+  };
+}
+function save() { clearTimeout(saveTimer); saveTimer = setTimeout(saveNow, 250); }
+function saveNow() {
+  clearTimeout(saveTimer);
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify({ app: 'alinhamento-evento', state, live, settings, savedAt: new Date().toISOString() }));
+    storageOk = true; lastSaved = now();
+  } catch (_) { storageOk = false; }
+  renderSaveStatus();
+}
+const saveStatusText = () => (storageOk
+  ? `Guardado automaticamente neste navegador${lastSaved ? ' (' + fmtClock(lastSaved) + ')' : ''}. Exporte uma cópia para passar a outro dispositivo.`
+  : 'Não foi possível guardar neste navegador: exporte uma cópia JSON para não perder alterações.');
+function renderSaveStatus() {
+  const el = $('#save-status'); if (el) el.textContent = saveStatusText();
+  const sum = $('.menu > summary'); if (sum) sum.classList.toggle('warn', !storageOk);
+}
+
+const undoPoint = () => ({ snap: JSON.stringify({ state, live }), dayId: settings.dayId });
+function restore(u) {
+  const d = JSON.parse(u.snap);
+  state = normalizeState(d.state) || state;
+  live = normalizeLive(d.live);
+  settings.dayId = u.dayId;
+  commit({ message: 'Alteração anulada' });
+}
+function commit(o = {}) {
+  state.days.forEach(pruneTransitions);
+  save();
+  renderAll();
+  if (o.message) toast(o.message, o.undo ? () => restore(o.undo) : null);
+}
+
+/* ================= Modelo: dias, blocos, transições ================= */
+const transKey = (a, b) => a.id + '>' + b.id;
+const EMPTY_T = Object.freeze({ duration: 0, desc: '', items: Object.freeze([]) });
+const peekTrans = (day, a, b) => day.transitions[transKey(a, b)] || EMPTY_T;
+function ensureTrans(day, a, b) { const k = transKey(a, b); return day.transitions[k] || (day.transitions[k] = { duration: 0, desc: '', items: [] }); }
+const cloneTrans = t => ({ duration: t.duration, desc: t.desc, items: t.items.map(x => ({ id: uid(), cat: x.cat, text: x.text })) });
+const adjacentKeys = day => day.blocks.slice(1).map((b, i) => transKey(day.blocks[i], b));
+const hasContent = t => !!t && (t.duration > 0 || !!t.desc || t.items.length > 0);
+
+// Remove transições de blocos apagados; guarda as não adjacentes com conteúdo (voltam se a ordem for reposta).
+function pruneTransitions(day) {
+  const ids = new Set(day.blocks.map(b => b.id));
+  const adj = new Set(adjacentKeys(day));
+  Object.keys(day.transitions).forEach(k => {
+    const [a, z] = k.split('>');
+    if (!ids.has(a) || !ids.has(z) || (!adj.has(k) && !hasContent(day.transitions[k]))) delete day.transitions[k];
+  });
+}
+
+const planDay = () => state.days.find(d => d.id === settings.dayId) || state.days[0];
+const dayName = day => day.label || 'Dia ' + (state.days.indexOf(day) + 1);
+const dayLabel = day => `${dayName(day)} · ${shortDate(day.date)}`;
+
+// Linha do tempo calculada: as horas nunca são introduzidas à mão.
+function buildPlan(day) {
+  const start = parseHM(day.start) ?? 0;
+  let t = start;
+  const items = [];
+  day.blocks.forEach((b, i) => {
+    items.push({ kind: 'block', key: 'b:' + b.id, block: b, index: i, start: t, end: t + b.duration, duration: b.duration });
+    t += b.duration;
+    const nb = day.blocks[i + 1];
+    if (nb) {
+      const tr = peekTrans(day, b, nb);
+      items.push({ kind: 'trans', key: 't:' + transKey(b, nb), trans: tr, from: b, to: nb, index: i, start: t, end: t + tr.duration, duration: tr.duration });
+      t += tr.duration;
+    }
+  });
+  const lim = parseHM(day.limit);
+  const limitAbs = lim == null ? null : lim < start ? lim + 1440 : lim;
+  return { start, end: t, total: t - start, items, limitAbs, over: limitAbs != null && t > limitAbs ? t - limitAbs : 0 };
+}
+
+/* ================= Render geral ================= */
+function applyTheme() {
+  const pref = settings.mode === 'live' ? settings.themeLive : settings.themePlan;
+  const root = document.documentElement;
+  if (pref === 'auto') delete root.dataset.theme; else root.dataset.theme = pref;
+  root.dataset.mode = settings.mode;
+}
+
+function renderAll() {
+  applyTheme();
+  renderTopbar();
+  $('#view-plan').hidden = settings.mode !== 'plan';
+  $('#view-live').hidden = settings.mode !== 'live';
+  if (settings.mode === 'live') renderLive(); else renderPlan();
+  renderPrint();
+}
+
+function renderTopbar() {
+  const isLive = settings.mode === 'live';
+  const running = !!(live.startedAt && !live.endedAt);
+  const pref = isLive ? settings.themeLive : settings.themePlan;
+  const tLabel = { auto: 'Tema automático', light: 'Tema claro', dark: 'Tema escuro' }[pref];
+  const tIcon = pref === 'dark' ? 'moon' : pref === 'light' ? 'sun' : 'auto';
+  const extra = isLive
+    ? (canFullscreen() ? `<button type="button" class="btn" data-action="fullscreen" title="Ecrã inteiro">${icon('maximize')}<span class="bl">Ecrã inteiro</span></button>` : '')
+      + ('wakeLock' in navigator ? `<button type="button" class="btn${wakeLock ? ' on' : ''}" data-action="wake" aria-pressed="${!!wakeLock}" title="Impedir que o ecrã se desligue">${icon('eye')}<span class="bl">${wakeLock ? 'Ecrã sempre ligado' : 'Manter ecrã ligado'}</span></button>` : '')
+    : `<button type="button" class="btn" data-action="print" title="Imprimir o alinhamento (uma página por dia)">${icon('print')}<span class="bl">Imprimir</span></button>`;
+  $('#topbar').innerHTML = `
+    <div class="brand">${LOGO}<div class="brand-text"><small>Alinhamento</small><strong>${esc(state.event.name)}</strong></div></div>
+    <div class="seg" role="group" aria-label="Modo">
+      <button type="button" data-action="mode" data-mode="plan" aria-pressed="${!isLive}">${icon('list')}<span class="sl">Planeamento</span></button>
+      <button type="button" data-action="mode" data-mode="live" aria-pressed="${isLive}">${running ? '<span class="rec" aria-hidden="true"></span>' : icon('play')}<span class="sl">Ao vivo</span></button>
+    </div>
+    <div class="top-actions">
+      ${extra}
+      <details class="menu"><summary class="btn${storageOk ? '' : ' warn'}" title="Cópias de segurança">${icon('database')}<span class="bl">Dados</span></summary>
+        <div class="menu-pop">
+          <button type="button" data-action="export">${icon('download')}<span>Exportar JSON (cópia de segurança)</span></button>
+          <button type="button" data-action="import">${icon('upload')}<span>Importar JSON</span></button>
+          <hr>
+          <button type="button" class="danger" data-action="reset-example">${icon('reset')}<span>Repor dados de exemplo</span></button>
+          <p class="menu-note" id="save-status">${esc(saveStatusText())}</p>
+        </div>
+      </details>
+      <button type="button" class="icon-btn" data-action="theme" title="${tLabel} (clique para mudar)" aria-label="${tLabel}, mudar tema">${icon(tIcon)}</button>
+    </div>`;
+}
+
+/* ================= Planeamento ================= */
+function renderPlan() {
+  const day = planDay();
+  const plan = buildPlan(day);
+  const nTrans = Math.max(0, day.blocks.length - 1);
+  const nActions = plan.items.reduce((s, it) => s + (it.kind === 'trans' ? it.trans.items.length : 0), 0);
+  $('#view-plan').innerHTML = `<div class="plan">
+    <aside class="plan-aside">${eventCardHTML()}${dayCardHTML(day, plan)}</aside>
+    <section class="plan-main" aria-label="Alinhamento do dia">
+      ${dayTabsHTML(day)}
+      <div class="tl-header">
+        <div><h2>${esc(cap(day.date ? longDate(day.date) : dayName(day)))}</h2>
+        <p class="muted">${plural(day.blocks.length, 'bloco', 'blocos')} · ${plural(nTrans, 'transição', 'transições')} · ${plural(nActions, 'ação', 'ações')} nas checklists</p></div>
+        <button type="button" class="btn primary" data-action="block-add">${icon('plus')}<span>Bloco</span></button>
+      </div>
+      ${day.blocks.length ? timelineHTML(day, plan) : `<div class="empty card"><p>Este dia ainda não tem blocos.</p><button type="button" class="btn primary" data-action="block-add">${icon('plus')} Adicionar o primeiro bloco</button></div>`}
+      ${day.blocks.length ? `<button type="button" class="add-block" data-action="block-add">${icon('plus')} Adicionar bloco no fim</button>` : ''}
+      ${legendHTML()}
+    </section>
+  </div>`;
+  if (flashId) {
+    const el = document.querySelector(`.tl-block[data-id="${flashId}"]`);
+    if (el) { el.classList.add('flash'); el.scrollIntoView({ block: 'nearest', behavior: 'smooth' }); }
+    flashId = null;
+  }
+}
+
+function eventDatesText() {
+  const ds = [...new Set(state.days.map(d => d.date).filter(Boolean))].sort();
+  if (!ds.length) return 'Datas por definir';
+  if (ds.length === 1) return cap(longDate(ds[0]));
+  return `${cap(shortDate(ds[0]))} a ${shortDate(ds[ds.length - 1])} ${ds[ds.length - 1].slice(0, 4)}`;
+}
+
+function eventCardHTML() {
+  const ev = state.event;
+  const more = ev.spaces.length || ev.notes
+    ? `<details class="ev-more" data-remember="evMore"${uiOpen.evMore ? ' open' : ''}><summary>Espaços e notas do evento</summary>
+        ${ev.spaces.length ? `<ul class="chips">${ev.spaces.map(s => `<li>${esc(s)}</li>`).join('')}</ul>` : ''}
+        ${ev.notes ? `<p class="ev-notes">${esc(ev.notes)}</p>` : ''}</details>`
+    : '';
+  return `<section class="card event-card">
+    <div class="kicker">Evento</div>
+    <h1>${esc(ev.name)}</h1>
+    <p class="ev-line">${icon('calendar')}<span>${esc(eventDatesText())}</span></p>
+    ${ev.location ? `<p class="ev-line">${icon('pin')}<span>${esc(ev.location)}</span></p>` : ''}
+    ${more}
+    <div class="card-actions"><button type="button" class="btn sm" data-action="event-edit">${icon('edit')} Editar evento</button></div>
+  </section>`;
+}
+
+function dayCardHTML(day, plan) {
+  let msg;
+  if (plan.limitAbs == null) msg = '<div class="limit-msg none">Sem hora limite definida.</div>';
+  else if (plan.over > 0) msg = `<div class="limit-msg over">${icon('alert')} Ultrapassa a hora limite em ${fmtDur(plan.over)}</div>`;
+  else {
+    const margin = plan.limitAbs - plan.end;
+    msg = `<div class="limit-msg ok">${icon('check')} ${margin ? `Termina ${fmtDur(margin)} antes da hora limite` : 'Termina exatamente à hora limite'}</div>`;
+  }
+  return `<section class="card day-card">
+    <div class="dc-head"><div><div class="kicker">${esc(dayName(day))}</div><h2>${esc(cap(day.date ? longDate(day.date) : 'Sem data'))}</h2></div>
+      <button type="button" class="btn sm" data-action="day-edit">${icon('edit')} Dia</button></div>
+    <dl class="stats">
+      <div><dt>Início</dt><dd>${esc(day.start)}</dd></div>
+      <div><dt>Fim previsto</dt><dd class="${plan.over ? 'over' : ''}">${fmtHM(plan.end)}</dd></div>
+      <div><dt>Duração total</dt><dd>${fmtDur(plan.total)}</dd></div>
+      <div><dt>Hora limite</dt><dd>${day.limit ? esc(day.limit) : '—'}</dd></div>
+    </dl>${msg}
+  </section>`;
+}
+
+function dayTabsHTML(day) {
+  return `<div class="day-tabs" role="tablist" aria-label="Dias do evento">${state.days.map(d => {
+    const p = buildPlan(d);
+    return `<button type="button" role="tab" class="day-tab" aria-selected="${d.id === day.id}" data-action="day-select" data-day="${d.id}"><b>${esc(dayName(d))}</b><span>${esc(shortDate(d.date))} · ${esc(d.start)}–${fmtHM(p.end)}</span></button>`;
+  }).join('')}<button type="button" class="day-add" data-action="day-add">${icon('plus')} Dia</button></div>`;
+}
+
+function timelineHTML(day, plan) {
+  const rows = plan.items.map(it => (it.kind === 'block' ? blockRowHTML(day, it, plan) : transRowHTML(it))).join('');
+  const over = plan.over > 0;
+  return `<ol class="timeline" id="timeline">${rows}
+    <li class="tl-row tl-endrow${over ? ' is-over' : ''}"><div class="tl-time">${fmtHM(plan.end)}</div><div class="tl-rail"><span class="tl-enddot"></span></div>
+      <div class="tl-endlabel"><b>Fim previsto</b> · ${fmtDur(plan.total)}${over ? ` · <span class="danger-txt">${icon('alert')} ${fmtDur(plan.over)} além do limite (${esc(day.limit)})</span>` : ''}</div></li>
+  </ol>`;
+}
+
+function blockRowHTML(day, it, plan) {
+  const b = it.block, i = it.index, n = day.blocks.length;
+  const over = plan.limitAbs != null && it.end > plan.limitAbs;
+  return `<li class="tl-row tl-block t-${b.type}${over ? ' is-over' : ''}" data-id="${b.id}" data-index="${i}">
+    <div class="tl-time"><span>${fmtHM(it.start)}</span><small>${fmtHM(it.end)}</small></div>
+    <div class="tl-rail"><span class="tl-dot"></span></div>
+    <article class="tl-card">
+      <div class="tl-head">
+        <button type="button" class="drag-handle" data-drag aria-label="Arrastar «${esc(b.title)}» para reordenar" title="Arrastar para reordenar">${icon('grip')}</button>
+        <button type="button" class="tl-main" data-action="block-edit" data-id="${b.id}">
+          <span class="type-chip">${esc(typeLabel(b.type))}</span>
+          <span class="tl-title">${esc(b.title)}</span>
+        </button>
+        <span class="tl-dur">${fmtDur(b.duration)}</span>
+      </div>
+      <div class="tl-body">
+        ${b.owner || b.place ? `<div class="tl-meta">${b.owner ? `<span>${icon('user')}${esc(b.owner)}</span>` : ''}${b.place ? `<span>${icon('pin')}${esc(b.place)}</span>` : ''}</div>` : ''}
+        ${b.notes ? `<p class="tl-notes">${esc(b.notes)}</p>` : ''}
+        <div class="tl-tools">
+          <button type="button" class="tool" data-action="block-up" data-id="${b.id}"${i === 0 ? ' disabled' : ''} aria-label="Subir" title="Subir">${icon('up')}</button>
+          <button type="button" class="tool" data-action="block-down" data-id="${b.id}"${i === n - 1 ? ' disabled' : ''} aria-label="Descer" title="Descer">${icon('down')}</button>
+          <button type="button" class="tool" data-action="block-dup" data-id="${b.id}" title="Duplicar">${icon('copy')}<span>Duplicar</span></button>
+          <button type="button" class="tool" data-action="block-edit" data-id="${b.id}" title="Editar">${icon('edit')}<span>Editar</span></button>
+          <button type="button" class="tool danger" data-action="block-del" data-id="${b.id}" title="Apagar">${icon('trash')}<span>Apagar</span></button>
+        </div>
+      </div>
+    </article>
+  </li>`;
+}
+
+function transRowHTML(it) {
+  const t = it.trans;
+  const ids = `data-from="${it.from.id}" data-to="${it.to.id}"`;
+  return `<li class="tl-row tl-trans" data-key="${esc(transKey(it.from, it.to))}">
+    <div class="tl-time">${t.duration ? `${fmtHM(it.start)}<small>${fmtHM(it.end)}</small>` : fmtHM(it.start)}</div>
+    <div class="tl-rail"><span class="tl-tdot"></span></div>
+    <div class="tl-tcard">
+      <div class="tt-head">
+        <button type="button" class="tt-main" data-action="trans-edit" ${ids} title="Editar transição">
+          ${icon('swap')}<b>Transição</b><span class="tt-dur">${t.duration ? fmtDur(t.duration) : 'imediata · 0 min'}</span>${t.desc ? `<span>${esc(t.desc)}</span>` : ''}
+        </button>
+        <button type="button" class="tool" data-action="block-insert" data-at="${it.index + 1}" title="Inserir um bloco neste ponto">${icon('plus')}<span>Bloco aqui</span></button>
+      </div>
+      ${t.items.length
+        ? `<ul class="tt-list">${t.items.map(x => `<li>${catTag(x.cat)}<span>${esc(x.text)}</span></li>`).join('')}</ul>`
+        : `<button type="button" class="tt-empty" data-action="trans-edit" ${ids}>Sem ações na checklist — adicionar</button>`}
+    </div>
+  </li>`;
+}
+
+function legendHTML() {
+  return `<section class="card legend" aria-label="Legenda">
+    <h3>Tipos de bloco</h3><ul>${TYPES.map(t => `<li class="t-${t.id}"><span class="sw"></span>${esc(t.label)}</li>`).join('')}<li class="t-trans"><span class="sw"></span>Transição</li></ul>
+    <h3>Categorias das ações</h3><ul>${CATS.map(c => `<li>${catTag(c.id, c.label)}</li>`).join('')}</ul>
+  </section>`;
+}
+
+/* ================= Diálogos ================= */
+let dlgSeq = 0;
+function openDialog(o) {
+  const dlg = $('#dlg');
+  const my = ++dlgSeq;
+  if (dlg.open) dlg.close();
+  dlg.className = o.wide ? 'wide' : '';
+  dlg.innerHTML = `<form class="dlg-form" novalidate autocomplete="off">
+    <header class="dlg-head"><h2>${esc(o.title)}</h2><button type="button" class="icon-btn" data-dlg="close" aria-label="Fechar">${icon('x')}</button></header>
+    <div class="dlg-body">${o.body}</div>
+    <footer class="dlg-foot">${o.extra || ''}<span class="grow"></span><button type="button" class="btn" data-dlg="close">Cancelar</button><button type="submit" class="btn ${o.danger ? 'danger-solid' : 'primary'}">${esc(o.submitLabel || 'Guardar')}</button></footer>
+  </form>`;
+  const form = dlg.querySelector('form');
+  let done = false;
+  form.addEventListener('submit', e => { e.preventDefault(); if (o.onSubmit && o.onSubmit(form) === false) return; done = true; dlg.close(); });
+  dlg.querySelectorAll('[data-dlg="close"]').forEach(b => b.addEventListener('click', () => dlg.close()));
+  const onClose = () => {
+    if (my !== dlgSeq) { dlg.removeEventListener('close', onClose); return; }
+    if (dlg.open) return;
+    dlg.removeEventListener('close', onClose);
+    if (o.onClose) o.onClose(done);
+  };
+  dlg.addEventListener('close', onClose);
+  bindSteppers(dlg);
+  if (typeof dlg.showModal === 'function') dlg.showModal(); else dlg.setAttribute('open', '');
+  if (o.onOpen) o.onOpen(dlg, form);
+}
+function ask(message, opts = {}) {
+  return new Promise(resolve => {
+    openDialog({ title: opts.title || 'Confirmar', body: `<p class="ask-msg">${esc(message)}</p>`, submitLabel: opts.ok || 'Confirmar', danger: !!opts.danger, onSubmit: () => true, onClose: ok => resolve(ok) });
+  });
+}
+function bindSteppers(root) {
+  root.querySelectorAll('[data-step]').forEach(btn => btn.addEventListener('click', () => {
+    const inp = btn.parentElement.querySelector('input');
+    inp.value = Math.max(0, (parseInt(inp.value, 10) || 0) + parseInt(btn.dataset.step, 10));
+    inp.dispatchEvent(new Event('input', { bubbles: true }));
+  }));
+}
+function markInvalid(form, name) {
+  const el = form.elements.namedItem(name);
+  el.classList.add('invalid'); el.focus();
+  el.addEventListener('input', () => el.classList.remove('invalid'), { once: true });
+}
+const stepper = (name, value, step, max) => `<div class="stepper"><button type="button" data-step="-${step}" aria-label="Menos ${step} minutos">−${step}</button><input name="${name}" type="number" inputmode="numeric" min="0" max="${max}" step="1" value="${value}"><button type="button" data-step="${step}" aria-label="Mais ${step} minutos">+${step}</button></div>`;
+
+function editBlock(day, id, insertAt) {
+  const src = id ? day.blocks.find(b => b.id === id) : null;
+  if (id && !src) return;
+  const b = src || { title: '', type: 'adoracao', duration: 15, owner: '', place: '', notes: '' };
+  const plan = buildPlan(day);
+  let startMin;
+  if (src) startMin = plan.items.find(x => x.key === 'b:' + id).start;
+  else {
+    const at = Math.min(insertAt == null ? day.blocks.length : insertAt, day.blocks.length);
+    startMin = at === 0 ? plan.start : plan.items.find(x => x.key === 'b:' + day.blocks[at - 1].id).end;
+  }
+  openDialog({
+    title: src ? 'Editar bloco' : 'Novo bloco',
+    body: `
+      <label class="field"><span>Título</span><input name="title" value="${esc(b.title)}" maxlength="120" placeholder="Ex.: Louvor, Palavra, Ofertório"></label>
+      <div class="row2">
+        <label class="field"><span>Tipo</span><select name="type">${TYPES.map(t => `<option value="${t.id}"${t.id === b.type ? ' selected' : ''}>${esc(t.label)}</option>`).join('')}</select></label>
+        <div class="field"><span>Duração (minutos)</span>${stepper('duration', b.duration, 5, 1440)}</div>
+      </div>
+      <p class="hint">${icon('clock')} Horário calculado: <b id="blk-time"></b> — muda sozinho com a duração e a ordem.</p>
+      <label class="field"><span>Responsável</span><input name="owner" value="${esc(b.owner)}" maxlength="140"></label>
+      <label class="field"><span>Local / espaço</span><input name="place" list="spaces-list" value="${esc(b.place)}" maxlength="140"></label>
+      <datalist id="spaces-list">${state.event.spaces.map(s => `<option value="${esc(s)}"></option>`).join('')}</datalist>
+      <label class="field"><span>Notas</span><textarea name="notes" rows="4">${esc(b.notes)}</textarea></label>`,
+    extra: src ? `<button type="button" class="btn danger" data-dlg="delete">${icon('trash')}<span>Apagar</span></button>` : '',
+    onOpen: (dlg, form) => {
+      const dur = form.elements.namedItem('duration');
+      const upd = () => { $('#blk-time', dlg).textContent = `${fmtHM(startMin)} – ${fmtHM(startMin + clampInt(dur.value, 0, 1440))}`; };
+      dur.addEventListener('input', upd); upd();
+      const del = dlg.querySelector('[data-dlg="delete"]');
+      if (del) del.addEventListener('click', () => { dlg.close(); delBlock(day, id); });
+      if (!src) form.elements.namedItem('title').focus();
+    },
+    onSubmit: form => {
+      const g = n => str(form.elements.namedItem(n).value);
+      const title = g('title').trim();
+      if (!title) { markInvalid(form, 'title'); return false; }
+      const before = undoPoint();
+      const data = { title, type: TYPE_IDS.has(g('type')) ? g('type') : 'outro', duration: clampInt(g('duration'), 0, 1440), owner: g('owner').trim(), place: g('place').trim(), notes: g('notes').trim() };
+      if (src) Object.assign(src, data);
+      else {
+        const nb = Object.assign({ id: uid() }, data);
+        day.blocks.splice(Math.min(insertAt == null ? day.blocks.length : insertAt, day.blocks.length), 0, nb);
+        flashId = nb.id;
+      }
+      commit({ message: src ? 'Bloco atualizado' : 'Bloco adicionado', undo: before });
+    },
+  });
+}
+
+const chkRowHTML = x => `<li data-id="${esc(x.id)}">
+  <select aria-label="Categoria">${CATS.map(c => `<option value="${c.id}"${c.id === x.cat ? ' selected' : ''}>${esc(c.label)}</option>`).join('')}</select>
+  <input type="text" value="${esc(x.text)}" placeholder="Descrever a ação" aria-label="Ação" maxlength="200">
+  <button type="button" class="tool" data-dlg="row-up" aria-label="Subir">${icon('up')}</button>
+  <button type="button" class="tool" data-dlg="row-down" aria-label="Descer">${icon('down')}</button>
+  <button type="button" class="tool danger" data-dlg="row-del" aria-label="Remover ação">${icon('x')}</button>
+</li>`;
+
+function editTrans(day, fromId, toId) {
+  const a = day.blocks.find(b => b.id === fromId), z = day.blocks.find(b => b.id === toId);
+  if (!a || !z) return;
+  const t = peekTrans(day, a, z);
+  const it = buildPlan(day).items.find(x => x.key === 't:' + transKey(a, z));
+  openDialog({
+    title: 'Transição',
+    wide: true,
+    body: `
+      <p class="trans-route"><span class="t-${a.type}"><i class="sw"></i>${esc(a.title)}</span>${icon('arrow')}<span class="t-${z.type}"><i class="sw"></i>${esc(z.title)}</span>${it ? `<span class="muted">· às ${fmtHM(it.start)}</span>` : ''}</p>
+      <div class="row2">
+        <div class="field"><span>Duração (minutos)</span>${stepper('duration', t.duration, 1, 600)}<small class="hint">0 = mudança imediata, sem tempo reservado no programa.</small></div>
+        <label class="field"><span>Descrição curta</span><input name="desc" value="${esc(t.desc)}" maxlength="140" placeholder="Ex.: a banda sai, o pregador entra"></label>
+      </div>
+      <fieldset class="chk-edit"><legend>Checklist de ações</legend>
+        <ul class="chk-rows">${t.items.map(chkRowHTML).join('')}</ul>
+        <button type="button" class="btn sm" data-dlg="add-row">${icon('plus')} Adicionar ação</button>
+        <div class="suggest"><span class="muted">Sugestões:</span>${SUGGESTIONS.map(([c, s], i) => `<button type="button" class="chip" data-dlg="suggest" data-i="${i}">${catTag(c)}${esc(s)}</button>`).join('')}</div>
+      </fieldset>`,
+    onOpen: dlg => {
+      const rows = dlg.querySelector('.chk-rows');
+      const addRow = (cat, text, after, focus) => {
+        const tmp = document.createElement('ul');
+        tmp.innerHTML = chkRowHTML({ id: uid(), cat, text });
+        const li = tmp.firstElementChild;
+        if (after) after.after(li); else rows.appendChild(li);
+        if (focus) li.querySelector('input').focus();
+      };
+      dlg.querySelector('[data-dlg="add-row"]').addEventListener('click', () => {
+        const last = rows.lastElementChild;
+        addRow(last ? last.querySelector('select').value : 'palco', '', null, true);
+      });
+      dlg.querySelectorAll('[data-dlg="suggest"]').forEach(btn => btn.addEventListener('click', () => {
+        const [c, s] = SUGGESTIONS[+btn.dataset.i]; addRow(c, s, null, false);
+      }));
+      rows.addEventListener('click', e => {
+        const btn = e.target.closest('[data-dlg]'); if (!btn) return;
+        const li = btn.closest('li');
+        if (btn.dataset.dlg === 'row-up' && li.previousElementSibling) li.previousElementSibling.before(li);
+        else if (btn.dataset.dlg === 'row-down' && li.nextElementSibling) li.nextElementSibling.after(li);
+        else if (btn.dataset.dlg === 'row-del') li.remove();
+      });
+      rows.addEventListener('keydown', e => {
+        if (e.key === 'Enter' && e.target.matches('input')) {
+          e.preventDefault();
+          const li = e.target.closest('li');
+          addRow(li.querySelector('select').value, '', li, true);
+        }
+      });
+    },
+    onSubmit: form => {
+      const before = undoPoint();
+      const tr = ensureTrans(day, a, z);
+      tr.duration = clampInt(form.elements.namedItem('duration').value, 0, 600);
+      tr.desc = str(form.elements.namedItem('desc').value).trim();
+      tr.items = $$('.chk-rows li', form).map(li => ({ id: li.dataset.id, cat: li.querySelector('select').value, text: li.querySelector('input').value.trim() })).filter(x => x.text);
+      commit({ message: 'Transição atualizada', undo: before });
+    },
+  });
+}
+
+function editDay(day) {
+  const i = state.days.indexOf(day);
+  openDialog({
+    title: `Editar ${dayName(day)}`,
+    body: `
+      <label class="field"><span>Nome do dia <small>(opcional)</small></span><input name="label" value="${esc(day.label)}" maxlength="60" placeholder="Dia ${i + 1}"></label>
+      <div class="row3">
+        <label class="field"><span>Data</span><input type="date" name="date" value="${esc(day.date)}"></label>
+        <label class="field"><span>Hora de início</span><input type="time" name="start" value="${esc(day.start)}"></label>
+        <label class="field"><span>Hora limite <small>(opcional)</small></span><input type="time" name="limit" value="${esc(day.limit)}"></label>
+      </div>
+      <p class="hint">A hora limite serve de alerta: se o fim previsto (ou projetado, ao vivo) a ultrapassar, a ferramenta avisa. Deixe vazio para não usar.</p>`,
+    extra: `<button type="button" class="btn" data-dlg="dup">${icon('copy')}<span>Duplicar dia</span></button>${state.days.length > 1 ? `<button type="button" class="btn danger" data-dlg="del">${icon('trash')}<span>Apagar dia</span></button>` : ''}`,
+    onOpen: dlg => {
+      dlg.querySelector('[data-dlg="dup"]').addEventListener('click', () => { dlg.close(); dupDay(day); });
+      const del = dlg.querySelector('[data-dlg="del"]');
+      if (del) del.addEventListener('click', () => { dlg.close(); delDay(day); });
+    },
+    onSubmit: form => {
+      const g = n => str(form.elements.namedItem(n).value);
+      const start = normHM(g('start'));
+      if (!start) { markInvalid(form, 'start'); return false; }
+      const before = undoPoint();
+      day.label = g('label').trim();
+      day.date = /^\d{4}-\d{2}-\d{2}$/.test(g('date')) ? g('date') : '';
+      day.start = start;
+      day.limit = normHM(g('limit'));
+      commit({ message: 'Dia atualizado', undo: before });
+    },
+  });
+}
+
+function editEvent() {
+  const ev = state.event;
+  openDialog({
+    title: 'Evento',
+    body: `
+      <label class="field"><span>Nome do evento</span><input name="name" value="${esc(ev.name)}" maxlength="120"></label>
+      <label class="field"><span>Local</span><input name="location" value="${esc(ev.location)}" maxlength="120"></label>
+      <label class="field"><span>Espaços <small>(um por linha — aparecem como sugestão no campo «Local» dos blocos)</small></span><textarea name="spaces" rows="6">${esc(ev.spaces.join('\n'))}</textarea></label>
+      <label class="field"><span>Notas do evento <small>(logística, equipamento, pendentes)</small></span><textarea name="notes" rows="7">${esc(ev.notes)}</textarea></label>`,
+    onSubmit: form => {
+      const g = n => str(form.elements.namedItem(n).value);
+      const name = g('name').trim();
+      if (!name) { markInvalid(form, 'name'); return false; }
+      const before = undoPoint();
+      Object.assign(ev, { name, location: g('location').trim(), spaces: g('spaces').split('\n').map(s => s.trim()).filter(Boolean), notes: g('notes').trim() });
+      commit({ message: 'Evento atualizado', undo: before });
+    },
+  });
+}
+
+/* ================= Operações ================= */
+function moveBlock(day, id, dir) {
+  const i = day.blocks.findIndex(b => b.id === id), j = i + dir;
+  if (i < 0 || j < 0 || j >= day.blocks.length) return;
+  const before = undoPoint(), pairs = adjacentKeys(day);
+  const [b] = day.blocks.splice(i, 1);
+  day.blocks.splice(j, 0, b);
+  afterReorder(day, before, pairs, b.id);
+}
+function afterReorder(day, before, pairsBefore, movedId) {
+  const fresh = adjacentKeys(day).filter(k => !pairsBefore.includes(k) && !hasContent(day.transitions[k])).length;
+  flashId = movedId;
+  commit({ message: fresh ? `Ordem alterada · ${plural(fresh, 'transição nova', 'transições novas')} por preencher` : 'Ordem alterada', undo: before });
+}
+function dupBlock(day, id) {
+  const i = day.blocks.findIndex(b => b.id === id); if (i < 0) return;
+  const before = undoPoint();
+  const src = day.blocks[i], next = day.blocks[i + 1];
+  const copy = Object.assign({}, src, { id: uid(), title: src.title + ' (cópia)' });
+  day.blocks.splice(i + 1, 0, copy);
+  if (next) { const t = day.transitions[transKey(src, next)]; if (t) day.transitions[transKey(copy, next)] = cloneTrans(t); }
+  flashId = copy.id;
+  commit({ message: 'Bloco duplicado', undo: before });
+}
+function delBlock(day, id) {
+  const i = day.blocks.findIndex(b => b.id === id); if (i < 0) return;
+  const before = undoPoint();
+  const [b] = day.blocks.splice(i, 1);
+  commit({ message: `«${b.title}» apagado`, undo: before });
+}
+function addDay() {
+  const before = undoPoint();
+  const last = state.days[state.days.length - 1];
+  const d = { id: uid(), label: '', date: last && last.date ? addDays(last.date, 1) : '', start: last ? last.start : '18:00', limit: last ? last.limit : '', blocks: [], transitions: {} };
+  state.days.push(d);
+  settings.dayId = d.id;
+  commit({ message: 'Dia adicionado', undo: before });
+}
+function dupDay(day) {
+  const before = undoPoint();
+  const map = {};
+  const blocks = day.blocks.map(b => { const nb = Object.assign({}, b, { id: uid() }); map[b.id] = nb.id; return nb; });
+  const transitions = {};
+  Object.keys(day.transitions).forEach(k => { const [a, z] = k.split('>'); if (map[a] && map[z]) transitions[map[a] + '>' + map[z]] = cloneTrans(day.transitions[k]); });
+  const nd = { id: uid(), label: day.label ? day.label + ' (cópia)' : '', date: addDays(day.date, 1), start: day.start, limit: day.limit, blocks, transitions };
+  state.days.splice(state.days.indexOf(day) + 1, 0, nd);
+  settings.dayId = nd.id;
+  commit({ message: 'Dia duplicado', undo: before });
+}
+function delDay(day) {
+  if (state.days.length < 2) return;
+  const before = undoPoint();
+  const name = dayName(day);
+  state.days.splice(state.days.indexOf(day), 1);
+  settings.dayId = state.days[0].id;
+  if (live.dayId === day.id) live = emptyLive();
+  commit({ message: `${name} apagado`, undo: before });
+}
+
+function exportJSON() {
+  const data = { app: 'alinhamento-evento', version: 1, exportedAt: new Date().toISOString(), state, live };
+  try {
+    const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = `alinhamento-${slug(state.event.name)}-${todayISO()}.json`;
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(a.href), 5000);
+    toast('Cópia JSON exportada');
+  } catch (_) { toast('Não foi possível exportar neste navegador'); }
+}
+function readFileText(file) {
+  return new Promise((res, rej) => { const r = new FileReader(); r.onload = () => res(String(r.result)); r.onerror = () => rej(r.error); r.readAsText(file); });
+}
+async function importFile(file) {
+  let data;
+  try { data = JSON.parse(await readFileText(file)); } catch (_) { toast('Ficheiro inválido: não é JSON'); return; }
+  const st = normalizeState(data && (data.state || data));
+  if (!st) { toast('O ficheiro não contém um alinhamento reconhecível'); return; }
+  const nBlocks = st.days.reduce((s, d) => s + d.blocks.length, 0);
+  const ok = await ask(`Importar «${st.event.name}» (${plural(st.days.length, 'dia', 'dias')}, ${plural(nBlocks, 'bloco', 'blocos')})? O alinhamento atual neste dispositivo é substituído.`, { ok: 'Importar' });
+  if (!ok) return;
+  const before = undoPoint();
+  state = st;
+  live = normalizeLive(data.live);
+  settings.dayId = st.days[0].id;
+  commit({ message: 'Alinhamento importado', undo: before });
+}
+async function resetExample() {
+  const ok = await ask('Repor os dados de exemplo? O alinhamento atual é substituído (pode exportar uma cópia antes).', { ok: 'Repor exemplo', danger: true });
+  if (!ok) return;
+  const before = undoPoint();
+  state = exampleState();
+  live = emptyLive();
+  settings.dayId = state.days[0].id;
+  commit({ message: 'Dados de exemplo repostos', undo: before });
+}
+
+/* ================= Impressão ================= */
+function renderPrint() {
+  const stamp = new Date(now());
+  $('#print-root').innerHTML = state.days.map((day, i) => {
+    const plan = buildPlan(day);
+    const groups = day.blocks.map((b, bi) => {
+      const it = plan.items.find(x => x.key === 'b:' + b.id);
+      const nb = day.blocks[bi + 1];
+      let trow = '';
+      if (nb) {
+        const ti = plan.items.find(x => x.key === 't:' + transKey(b, nb));
+        const t = ti.trans;
+        trow = `<tr class="pr-trans"><td>${t.duration ? `${fmtHM(ti.start)}–${fmtHM(ti.end)}` : fmtHM(ti.start)}</td><td colspan="4">
+          <div class="pr-th">⇄ Transição · ${t.duration ? fmtDur(t.duration) : 'imediata'}${t.desc ? ' — ' + esc(t.desc) : ''}</div>
+          ${t.items.length ? `<ul class="pr-chk">${t.items.map(x => `<li><span class="pr-box"></span><span class="pr-cat">${esc(catShort(x.cat))}</span>${esc(x.text)}</li>`).join('')}</ul>` : ''}
+        </td></tr>`;
+      }
+      return `<tbody class="pr-grp t-${b.type}"><tr class="pr-block"><td>${fmtHM(it.start)}–${fmtHM(it.end)}</td><td class="pr-title"><b>${esc(b.title)}</b><span class="pr-type">${esc(typeOf(b.type).short)}</span>${b.notes ? `<div class="pr-notes">${esc(b.notes)}</div>` : ''}</td><td>${fmtDur(b.duration)}</td><td>${esc(b.owner)}</td><td>${esc(b.place)}</td></tr>${trow}</tbody>`;
+    }).join('');
+    return `<section class="pr-day">
+      <header class="pr-head">
+        <div><div class="pr-event">${esc(state.event.name)}</div><div class="pr-dayline">${esc(dayName(day))} · ${esc(cap(longDate(day.date)))}${state.event.location ? ' · ' + esc(state.event.location) : ''}</div></div>
+        <div class="pr-stats">Início <b>${esc(day.start)}</b> · Fim previsto <b>${fmtHM(plan.end)}</b> · Duração <b>${fmtDur(plan.total)}</b>${day.limit ? `<br>Hora limite <b>${esc(day.limit)}</b>${plan.over ? ` <span class="pr-over">ultrapassada em ${fmtDur(plan.over)}</span>` : ''}` : ''}</div>
+      </header>
+      ${day.blocks.length ? `<table class="pr-table"><colgroup><col style="width:12%"><col style="width:36%"><col style="width:8%"><col style="width:20%"><col style="width:24%"></colgroup>
+        <thead><tr><th>Hora</th><th>Bloco</th><th>Duração</th><th>Responsável</th><th>Local</th></tr></thead>${groups}</table>` : '<p>Sem blocos neste dia.</p>'}
+      <footer class="pr-foot"><span>Impresso em ${fmtStamp(stamp)}</span><span>${esc(dayName(day))} · ${i + 1} de ${state.days.length}</span></footer>
+    </section>`;
+  }).join('');
+}
+function doPrint() { renderPrint(); window.print(); }
+
+/* ================= Ao vivo ================= */
+let wakeLock = null, tickTimer = null, lastAdvance = 0;
+const putCache = new Map();
+
+function liveDay() {
+  const byId = id => state.days.find(d => d.id === id);
+  return (live.startedAt && byId(live.dayId)) || byId(settings.liveDayId) || state.days.find(d => d.date === todayISO()) || planDay();
+}
+// Hora planeada de início em milissegundos, ancorada ao dia de hoje (permite ensaios noutro dia).
+function defaultBase(day) {
+  const t = now();
+  const d = new Date(t); d.setHours(0, 0, 0, 0);
+  let base = d.getTime() + (parseHM(day.start) || 0) * 60000;
+  if (t - base > 18 * 3600e3) base += 864e5; else if (base - t > 18 * 3600e3) base -= 864e5;
+  return base;
+}
+
+function computeLive(day) {
+  const plan = buildPlan(day);
+  const moments = plan.items.filter(it => it.kind === 'block' || it.duration > 0);
+  const active = !!(live.startedAt && live.dayId === day.id);
+  const ended = active && !!live.endedAt;
+  const base = active && live.base ? live.base : defaultBase(day);
+  const abs = m => base + (m - plan.start) * 60000;
+  const t = now();
+  const rows = moments.map(m => ({ m, ps: abs(m.start), pe: abs(m.end), eff: Math.max(0, m.duration + (active ? (live.adjust[m.key] || 0) : 0)) * 60000, status: 'todo', as: null, ae: null, js: null, je: null }));
+  let idx = -1;
+  if (active && rows.length) {
+    idx = rows.findIndex(r => r.m.key === live.currentKey);
+    if (idx < 0) { for (let i = rows.length - 1; i >= 0; i--) if (live.starts[rows[i].m.key] != null) { idx = i; break; } }
+    if (idx < 0) idx = 0;
+  }
+  let cursor = null;
+  rows.forEach((r, i) => {
+    if (!active) {
+      if (i === 0) cursor = Math.max(t, r.ps);
+      r.js = cursor; r.je = cursor + r.eff; cursor = r.je;
+      r.status = i === 0 ? 'next' : 'todo';
+    } else if (i < idx || (ended && i === idx)) {
+      r.status = 'done'; r.as = live.starts[r.m.key] ?? null;
+    } else if (i === idx) {
+      r.status = 'current'; r.as = live.starts[r.m.key] ?? t;
+      r.js = r.as; r.je = Math.max(r.as + r.eff, t); cursor = r.je;
+    } else if (cursor != null) {
+      r.status = i === idx + 1 ? 'next' : 'todo';
+      r.js = cursor; r.je = cursor + r.eff; cursor = r.je;
+    }
+  });
+  rows.forEach((r, i) => {
+    if (r.status !== 'done') return;
+    for (let j = i + 1; j < rows.length; j++) if (rows[j].as != null) { r.ae = rows[j].as; return; }
+    if (ended) r.ae = live.endedAt;
+  });
+  const cur = active && !ended ? rows[idx] : null;
+  const plannedEnd = abs(plan.end);
+  let delayMs = 0, projEnd = plannedEnd;
+  if (rows.length) {
+    if (!active) { delayMs = rows[0].js - rows[0].ps; projEnd = rows[rows.length - 1].je; }
+    else if (ended) { projEnd = live.endedAt; delayMs = live.endedAt - plannedEnd; }
+    else { delayMs = cur.je - cur.pe; projEnd = rows[rows.length - 1].je ?? cur.je; }
+  }
+  const limitMs = plan.limitAbs != null ? abs(plan.limitAbs) : null;
+  return {
+    day, plan, rows, idx, cur, active, ended, base, plannedEnd, projEnd, delayMs, limitMs,
+    overLimitMs: limitMs != null ? projEnd - limitMs : null,
+    remaining: cur ? cur.as + cur.eff - t : null,
+  };
+}
+
+const momentTitle = m => (m.kind === 'block' ? m.block.title : `Transição para «${m.to.title}»`);
+function metaHTML(m) {
+  if (m.kind === 'trans') return m.trans.desc ? `<p class="lv-meta">${esc(m.trans.desc)}</p>` : '';
+  const b = m.block;
+  return b.owner || b.place ? `<p class="lv-meta">${b.owner ? `<span>${icon('user')}${esc(b.owner)}</span>` : ''}${b.place ? `<span>${icon('pin')}${esc(b.place)}</span>` : ''}</p>` : '';
+}
+const deltaWords = d => (d > 0 ? `${fmtDur(d)} depois do previsto` : d < 0 ? `${fmtDur(-d)} antes do previsto` : 'à hora prevista');
+const clockHTML = t => { const d = new Date(t); return `${pad2(d.getHours())}:${pad2(d.getMinutes())}<span class="sec">${pad2(d.getSeconds())}</span>`; };
+
+function renderLive() {
+  const day = liveDay();
+  const L = computeLive(day);
+  const curType = L.cur ? (L.cur.m.kind === 'block' ? 't-' + L.cur.m.block.type : 't-trans') : '';
+  const picker = state.days.length > 1
+    ? `<label class="lv-daypick">Dia <select data-live-day>${state.days.map(d => `<option value="${d.id}"${d.id === day.id ? ' selected' : ''}>${esc(dayLabel(d))}</option>`).join('')}</select></label>` : '';
+  $('#view-live').innerHTML = `<div class="live">
+    <section class="lv-card lv-clock" aria-label="Hora atual"><div class="lv-time" id="lv-clock"></div><div class="lv-date"><span id="lv-date"></span>${picker}</div></section>
+    <section class="lv-card lv-status" id="lv-status" aria-live="polite"></section>
+    <section class="lv-card lv-now ${curType}">${nowHTML(L)}</section>
+    <section class="lv-card lv-next">${nextHTML(L, day)}</section>
+    <section class="lv-card lv-prog">
+      <div class="lv-prog-head"><h3>Programa · ${esc(dayLabel(day))}</h3>${L.active ? `<button type="button" class="btn sm ghost danger" data-action="live-reset">${icon('reset')} Reiniciar acompanhamento</button>` : ''}</div>
+      <ol class="lv-list" id="lv-prog-list"></ol>
+      <p class="lv-hint muted">Atalhos no portátil: → ou Page Down avança · Ctrl+Z desfaz o último avanço.</p>
+    </section>
+  </div>`;
+  tickLive();
+}
+
+function nowHTML(L) {
+  if (!L.rows.length) return '<div class="lv-label">Agora</div><h2 class="lv-title">Sem programa</h2><p class="lv-meta">Este dia não tem blocos. Adicione-os no planeamento.</p>';
+  if (!L.active) {
+    const first = L.rows[0];
+    return `<div class="lv-top"><div class="lv-label">Por iniciar</div><div class="lv-planned">previsto ${fmtClock(first.ps)}–${fmtClock(L.plannedEnd)}</div></div>
+      <h2 class="lv-title">Começa às ${fmtClock(first.ps)}</h2>
+      <p class="lv-meta"><span>Primeiro momento: <b>${esc(momentTitle(first.m))}</b></span></p>
+      <div><div class="lv-countlabel" id="lv-countlabel"></div><div class="lv-count" id="lv-count"></div></div>
+      <div class="lv-actions"><button type="button" class="btn primary lv-advance" data-action="live-start"><span class="row">${icon('play')} Iniciar agora</span><small>regista a hora real de início</small></button></div>`;
+  }
+  if (L.ended) {
+    const d = Math.round(L.delayMs / 60000);
+    return `<div class="lv-top"><div class="lv-label">Terminado</div></div>
+      <h2 class="lv-title">Terminou às ${fmtClock(live.endedAt)}</h2>
+      <p class="lv-meta">Fim previsto ${fmtClock(L.plannedEnd)} · ${d > 0 ? fmtDur(d) + ' de atraso' : d < 0 ? fmtDur(-d) + ' adiantado' : 'à hora prevista'}</p>
+      <div class="lv-actions"><button type="button" class="btn lv-undo" data-action="live-undo">${icon('undo')} Retomar</button>
+      <button type="button" class="btn lv-advance" data-action="live-reset"><span class="row">${icon('reset')} Reiniciar</span><small>apaga as horas reais registadas</small></button></div>`;
+  }
+  const r = L.cur, m = r.m;
+  const adj = live.adjust[m.key] || 0;
+  const isLast = L.idx === L.rows.length - 1;
+  const isTrans = m.kind === 'trans';
+  const adjTxt = adj ? `${adj > 0 ? '+' : '−'}${Math.abs(adj)} min` : '±0 min';
+  return `<div class="lv-top"><div class="lv-label">Agora · ${esc(isTrans ? 'Transição' : typeLabel(m.block.type))}</div><div class="lv-planned">previsto ${fmtClock(r.ps)}–${fmtClock(r.pe)}</div></div>
+    <h2 class="lv-title">${esc(momentTitle(m))}</h2>
+    ${metaHTML(m)}
+    <div class="lv-countrow">
+      <div><div class="lv-countlabel" id="lv-countlabel"></div><div class="lv-count" id="lv-count"></div></div>
+      <div class="lv-startinfo">Começou às <b>${fmtClock(r.as)}</b><br>${deltaWords(Math.round((r.as - r.ps) / 60000))}<br>Duração <b>${fmtDur(r.eff / 60000)}</b>${adj ? ` (ajuste ${adjTxt})` : ''}</div>
+    </div>
+    <div class="lv-bar" id="lv-barwrap"><i id="lv-bar"></i></div>
+    <div class="lv-adjust" role="group" aria-label="Encurtar ou alongar o momento atual">
+      <span class="lv-adjlabel">Ajustar</span>
+      <button type="button" class="btn" data-action="live-adjust" data-delta="-5" aria-label="Encurtar 5 minutos">−5</button>
+      <button type="button" class="btn" data-action="live-adjust" data-delta="-1" aria-label="Encurtar 1 minuto">−1</button>
+      <span class="lv-adjval">${adjTxt}</span>
+      <button type="button" class="btn" data-action="live-adjust" data-delta="1" aria-label="Alongar 1 minuto">+1</button>
+      <button type="button" class="btn" data-action="live-adjust" data-delta="5" aria-label="Alongar 5 minutos">+5</button>
+    </div>
+    ${isTrans ? checklistHTML(m.trans, 'Checklist desta transição') : ''}
+    ${!isTrans && m.block.notes ? `<p class="lv-notes">${esc(m.block.notes)}</p>` : ''}
+    <div class="lv-actions">
+      <button type="button" class="btn lv-undo" data-action="live-undo">${icon('undo')} Desfazer</button>
+      <button type="button" class="btn primary lv-advance" data-action="live-advance">${isLast
+        ? `<span class="row">${icon('check')} Terminar</span><small>regista a hora real de fim</small>`
+        : `<span class="row">Avançar ${icon('next')}</span><small>para: ${esc(momentTitle(L.rows[L.idx + 1].m))}</small>`}</button>
+    </div>`;
+}
+
+function nextHTML(L, day) {
+  if (!L.rows.length) return '<div class="lv-label">A seguir</div><p class="lv-after">—</p>';
+  if (L.ended) return '<div class="lv-label">A seguir</div><p class="lv-after">Não há mais momentos neste dia.</p>';
+  if (!L.active) return `<div class="lv-label">A seguir</div>${nextBlockHTML(L.rows[0], 0)}`;
+  const m = L.cur.m;
+  if (m.kind === 'block') {
+    const nb = day.blocks[m.index + 1];
+    if (!nb) return `<div class="lv-label">A seguir</div><p class="lv-after">É o último momento do dia. Fim projetado às <b>${fmtClock(L.projEnd)}</b>.</p>`;
+    const tr = peekTrans(day, m.block, nb);
+    const bi = L.rows.findIndex(r => r.m.kind === 'block' && r.m.block.id === nb.id);
+    return `<div class="lv-label">A seguir</div>
+      ${checklistHTML(tr, tr.duration ? `Transição · ${fmtDur(tr.duration)}` : 'Transição imediata')}
+      ${bi >= 0 ? nextBlockHTML(L.rows[bi], bi) : ''}`;
+  }
+  const bi = L.idx + 1;
+  const r = L.rows[bi];
+  if (!r) return '<div class="lv-label">A seguir</div><p class="lv-after">Não há mais momentos neste dia.</p>';
+  const after = day.blocks[r.m.index + 1];
+  const t2 = after ? peekTrans(day, r.m.block, after) : null;
+  return `<div class="lv-label">A seguir</div>${nextBlockHTML(r, bi)}
+    ${after ? `<p class="lv-after">Depois deste bloco: transição para «${esc(after.title)}» · ${plural(t2.items.length, 'ação', 'ações')}</p>` : ''}`;
+}
+
+function nextBlockHTML(r, rowIndex) {
+  const b = r.m.block;
+  return `<div class="lv-nb t-${b.type}">
+    <div class="lv-nb-time"><span data-proj-row="${rowIndex}">~${fmtClock(r.js)}</span><small>previsto ${fmtClock(r.ps)}</small></div>
+    <div><span class="type-chip">${esc(typeLabel(b.type))}</span><h3>${esc(b.title)}</h3>
+      <p class="lv-meta">${b.owner ? `<span>${icon('user')}${esc(b.owner)}</span>` : ''}${b.place ? `<span>${icon('pin')}${esc(b.place)}</span>` : ''}<span>${icon('clock')}${fmtDur(b.duration)}</span></p></div>
+  </div>`;
+}
+
+function checklistHTML(tr, head) {
+  const items = tr.items || [];
+  const done = items.filter(x => live.checks[x.id]).length;
+  return `<div class="lv-chk">
+    <div class="lv-chk-head"><b>${esc(head)}</b>${items.length ? `<span class="lv-chk-count">${done}/${items.length}</span>` : ''}</div>
+    ${tr.desc ? `<p class="lv-chk-desc">${esc(tr.desc)}</p>` : ''}
+    ${items.length
+      ? `<ul class="lv-check">${items.map(x => `<li class="${live.checks[x.id] ? 'done' : ''}"><label><input type="checkbox" data-check="${esc(x.id)}"${live.checks[x.id] ? ' checked' : ''}>${catTag(x.cat)}<span class="txt">${esc(x.text)}</span></label></li>`).join('')}</ul>`
+      : '<p class="lv-chk-desc">Sem ações nesta transição.</p>'}
+  </div>`;
+}
+
+function statusHTML(L, day) {
+  if (!L.rows.length) return '<div class="lv-label">Desvio</div><div class="lv-delay">—</div>';
+  const d = Math.round(L.delayMs / 60000);
+  const cls = d >= 5 ? 'bad' : d >= 1 ? 'warn' : d <= -1 ? 'good' : '';
+  const label = !L.active ? 'Arranque' : L.ended ? 'Resultado final' : 'Desvio acumulado';
+  const txt = !L.active && d <= 0 ? 'No horário' : d > 0 ? `${fmtDur(d)} de atraso` : d < 0 ? `${fmtDur(-d)} adiantado` : 'No horário';
+  let limit = '';
+  if (L.limitMs != null) {
+    const over = Math.round(L.overLimitMs / 60000);
+    limit = over > 0
+      ? `<div class="lv-alert bad">${icon('alert')} Ultrapassa a hora limite (${fmtClock(L.limitMs)}) em ${fmtDur(over)}</div>`
+      : `<div class="lv-alert ok">${icon('check')} Margem até à hora limite (${fmtClock(L.limitMs)}): ${fmtDur(-over)}</div>`;
+  }
+  const rehearsal = day.date && day.date !== toISO(new Date(L.base))
+    ? `<div class="lv-alert info">Ensaio: as horas contam a partir de hoje. O evento está marcado para ${esc(longDate(day.date))}.</div>` : '';
+  return `<div class="lv-label">${label}</div>
+    <div class="lv-delay ${cls}">${txt}</div>
+    <div class="lv-endline">Fim previsto <b>${fmtClock(L.plannedEnd)}</b> · ${L.ended ? 'real' : 'projetado'} <b>${fmtClock(L.projEnd)}</b></div>
+    ${limit}${rehearsal}`;
+}
+
+function programRows(L) {
+  const head = '<li class="lv-row head"><span>Previsto</span><span>Real / proj.</span><span>Momento</span><span class="c4">Duração</span><span>Desvio</span></li>';
+  return head + L.rows.map(r => {
+    const m = r.m;
+    const type = m.kind === 'block' ? m.block.type : 'trans';
+    const sub = m.kind === 'block' ? m.block.owner : m.trans.desc;
+    let real = '', dur = fmtDur(r.eff / 60000), dl = null;
+    if (r.status === 'done') {
+      real = r.as != null ? fmtClock(r.as) : '—';
+      if (r.as != null && r.ae != null) dur = fmtDur((r.ae - r.as) / 60000);
+      if (r.as != null) dl = Math.round((r.as - r.ps) / 60000);
+    } else if (r.status === 'current') { real = fmtClock(r.as); dl = Math.round((r.as - r.ps) / 60000); }
+    else if (r.js != null) { real = `<span class="proj">~${fmtClock(r.js)}</span>`; dl = Math.round((r.js - r.ps) / 60000); }
+    const dlTxt = dl == null ? '' : dl > 0 ? '+' + dl : dl < 0 ? '−' + -dl : '0';
+    const dlCls = dl == null ? '' : dl >= 5 ? 'dl-bad' : dl >= 1 ? 'dl-pos' : dl <= -1 ? 'dl-neg' : '';
+    return `<li class="lv-row ${r.status} t-${type}"><span>${fmtClock(r.ps)}</span><span>${real}</span><span class="c3"><b>${esc(momentTitle(m))}</b>${sub ? `<small>${esc(sub)}</small>` : ''}</span><span class="c4">${dur}</span><span class="${dlCls}">${dlTxt}</span></li>`;
+  }).join('');
+}
+
+function countInfo(L, t) {
+  if (!L.rows.length) return { label: '', text: '—', over: false };
+  if (!L.active) {
+    const d = L.rows[0].ps - t;
+    return d >= 0 ? { label: 'Faltam', text: fmtCount(d), over: false } : { label: 'Início em atraso', text: '+' + fmtCount(-d), over: true };
+  }
+  if (L.ended || L.remaining == null) return { label: '', text: '—', over: false };
+  return L.remaining >= 0 ? { label: 'Faltam', text: fmtCount(L.remaining), over: false } : { label: 'Tempo excedido', text: '+' + fmtCount(-L.remaining), over: true };
+}
+
+function put(id, html) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  if (el.dataset.filled && putCache.get(id) === html) return;
+  el.innerHTML = html; el.dataset.filled = '1'; putCache.set(id, html);
+}
+
+function tickLive() {
+  if (settings.mode !== 'live') return;
+  const day = liveDay();
+  const L = computeLive(day);
+  const t = now();
+  put('lv-clock', clockHTML(t));
+  put('lv-date', esc(cap(longDateMs(t))));
+  put('lv-status', statusHTML(L, day));
+  put('lv-prog-list', programRows(L));
+  const c = $('#lv-count');
+  if (c) {
+    const info = countInfo(L, t);
+    c.textContent = info.text;
+    c.classList.toggle('over', info.over);
+    const lab = $('#lv-countlabel'); if (lab) lab.textContent = info.label;
+  }
+  const bar = $('#lv-bar');
+  if (bar && L.cur) {
+    const pct = L.cur.eff > 0 ? Math.min(100, Math.max(0, ((t - L.cur.as) / L.cur.eff) * 100)) : 100;
+    bar.style.width = pct + '%';
+    $('#lv-barwrap').classList.toggle('over', L.remaining < 0);
+  }
+  $$('[data-proj-row]').forEach(el => { const r = L.rows[+el.dataset.projRow]; if (r && r.js != null) el.textContent = '~' + fmtClock(r.js); });
+}
+function startTick() {
+  stopTick();
+  const loop = () => { tickLive(); tickTimer = setTimeout(loop, 1000 - (Date.now() % 1000) + 15); };
+  loop();
+}
+function stopTick() { clearTimeout(tickTimer); tickTimer = null; }
+
+function liveStart() {
+  const day = liveDay();
+  const L = computeLive(day);
+  if (!L.rows.length) return;
+  const t = now();
+  const checks = live.checks;
+  live = emptyLive();
+  live.checks = checks;
+  live.dayId = day.id; live.base = defaultBase(day); live.startedAt = t;
+  live.currentKey = L.rows[0].m.key; live.starts[live.currentKey] = t;
+  settings.liveDayId = day.id;
+  lastAdvance = t;
+  saveNow(); renderAll();
+}
+function liveAdvance() {
+  const day = liveDay();
+  const L = computeLive(day);
+  if (!L.active) { liveStart(); return; }
+  if (L.ended || !L.cur) return;
+  const t = now();
+  if (t - lastAdvance < 1200) return; // evita duplo toque
+  lastAdvance = t;
+  if (L.idx >= L.rows.length - 1) { live.history.push({ type: 'end' }); live.endedAt = t; }
+  else {
+    live.history.push({ type: 'adv', prev: L.cur.m.key });
+    const k = L.rows[L.idx + 1].m.key;
+    live.currentKey = k; live.starts[k] = t;
+  }
+  saveNow(); renderAll();
+}
+async function liveUndo() {
+  if (!live.startedAt) return;
+  const h = live.history.pop();
+  if (!h) {
+    const ok = await ask('Anular o início do acompanhamento? A hora real de início é apagada.', { ok: 'Anular início', danger: true });
+    if (!ok) return;
+    const checks = live.checks; live = emptyLive(); live.checks = checks;
+  } else if (h.type === 'end') live.endedAt = null;
+  else {
+    delete live.starts[live.currentKey];
+    delete live.adjust[live.currentKey];
+    live.currentKey = h.prev;
+  }
+  lastAdvance = 0;
+  saveNow(); renderAll();
+  toast('Último avanço desfeito');
+}
+function liveAdjust(delta) {
+  const L = computeLive(liveDay());
+  if (!L.cur) return;
+  const k = L.cur.m.key;
+  const v = Math.min(600, Math.max(-L.cur.m.duration, (live.adjust[k] || 0) + delta));
+  if (v) live.adjust[k] = v; else delete live.adjust[k];
+  saveNow(); renderLive();
+}
+async function liveReset() {
+  const ok = await ask('Reiniciar o acompanhamento ao vivo? Apaga as horas reais, os ajustes e as marcações das checklists.', { ok: 'Reiniciar', danger: true });
+  if (!ok) return;
+  live = emptyLive();
+  saveNow(); renderAll();
+  toast('Acompanhamento reiniciado');
+}
+async function changeLiveDay(sel) {
+  const id = sel.value;
+  if (live.startedAt && live.dayId !== id) {
+    const ok = await ask('Mudar de dia termina o acompanhamento em curso. Continuar?', { ok: 'Mudar de dia' });
+    if (!ok) { sel.value = live.dayId; return; }
+    live = emptyLive();
+  }
+  settings.liveDayId = id;
+  saveNow(); renderAll();
+}
+
+async function requestWake() {
+  if (!('wakeLock' in navigator) || document.visibilityState !== 'visible' || wakeLock) return;
+  try {
+    wakeLock = await navigator.wakeLock.request('screen');
+    wakeLock.addEventListener('release', () => { wakeLock = null; renderTopbar(); });
+  } catch (_) { wakeLock = null; }
+  renderTopbar();
+}
+function releaseWake() { if (wakeLock) { const w = wakeLock; wakeLock = null; w.release().catch(() => {}); } }
+function toggleWake() {
+  if (wakeLock) { settings.wake = false; releaseWake(); renderTopbar(); }
+  else { settings.wake = true; requestWake(); }
+  save();
+}
+const canFullscreen = () => !!(document.fullscreenEnabled || document.webkitFullscreenEnabled);
+function toggleFullscreen() {
+  const d = document, el = d.documentElement;
+  try {
+    const p = d.fullscreenElement || d.webkitFullscreenElement
+      ? (d.exitFullscreen || d.webkitExitFullscreen).call(d)
+      : (el.requestFullscreen || el.webkitRequestFullscreen).call(el);
+    if (p && p.catch) p.catch(() => {});
+  } catch (_) {}
+}
+
+/* ================= Modo e tema ================= */
+function setMode(m) {
+  settings.mode = m === 'live' ? 'live' : 'plan';
+  save();
+  renderAll();
+  if (settings.mode === 'live') { startTick(); if (settings.wake) requestWake(); }
+  else { stopTick(); releaseWake(); }
+  window.scrollTo(0, 0);
+}
+function cycleTheme() {
+  const key = settings.mode === 'live' ? 'themeLive' : 'themePlan';
+  const order = ['auto', 'light', 'dark'];
+  settings[key] = order[(order.indexOf(settings[key]) + 1) % order.length];
+  save(); applyTheme(); renderTopbar();
+  toast({ auto: 'Tema automático (segue o sistema)', light: 'Tema claro', dark: 'Tema escuro' }[settings[key]] + (settings.mode === 'live' ? ' no modo ao vivo' : ' no planeamento'));
+}
+
+/* ================= Aviso flutuante ================= */
+let toastTimer = null;
+function toast(msg, undoFn) {
+  const el = $('#toast');
+  el.innerHTML = `<span>${esc(msg)}</span>${undoFn ? '<button type="button">Anular</button>' : ''}`;
+  if (undoFn) el.querySelector('button').addEventListener('click', () => { hideToast(); undoFn(); });
+  el.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(hideToast, undoFn ? 7000 : 3200);
+}
+function hideToast() { $('#toast').classList.remove('show'); }
+
+/* ================= Arrastar para reordenar (rato e toque) ================= */
+let drag = null;
+function initDrag() {
+  document.addEventListener('pointerdown', e => {
+    const h = e.target.closest('[data-drag]');
+    if (!h || e.button > 0) return;
+    const li = h.closest('.tl-block');
+    if (!li) return;
+    e.preventDefault();
+    drag = { li, id: li.dataset.id, from: +li.dataset.index, y0: e.clientY + window.scrollY, pid: e.pointerId, others: $$('#timeline .tl-block').filter(x => x !== li), target: null };
+    try { h.setPointerCapture(e.pointerId); } catch (_) {}
+    li.classList.add('dragging');
+    document.body.classList.add('is-dragging');
+  });
+  document.addEventListener('pointermove', e => {
+    if (!drag || e.pointerId !== drag.pid) return;
+    e.preventDefault();
+    const y = e.clientY;
+    if (y < 80) window.scrollBy(0, -14); else if (y > window.innerHeight - 80) window.scrollBy(0, 14);
+    drag.li.style.transform = `translateY(${y + window.scrollY - drag.y0}px)`;
+    let t = 0;
+    drag.others.forEach(o => { const r = o.querySelector('.tl-card').getBoundingClientRect(); if (y > r.top + r.height / 2) t++; });
+    drag.target = t;
+    drag.others.forEach(o => o.classList.remove('drop-before', 'drop-after'));
+    if (t < drag.others.length) drag.others[t].classList.add('drop-before');
+    else if (drag.others.length) drag.others[drag.others.length - 1].classList.add('drop-after');
+  }, { passive: false });
+  const end = e => {
+    if (!drag || e.pointerId !== drag.pid) return;
+    const d = drag; drag = null;
+    d.li.classList.remove('dragging'); d.li.style.transform = '';
+    d.others.forEach(o => o.classList.remove('drop-before', 'drop-after'));
+    document.body.classList.remove('is-dragging');
+    if (e.type === 'pointercancel' || d.target == null || d.target === d.from) return;
+    const day = planDay();
+    const i = day.blocks.findIndex(b => b.id === d.id);
+    if (i < 0) return;
+    const before = undoPoint(), pairs = adjacentKeys(day);
+    const [b] = day.blocks.splice(i, 1);
+    day.blocks.splice(d.target, 0, b);
+    afterReorder(day, before, pairs, b.id);
+  };
+  document.addEventListener('pointerup', end);
+  document.addEventListener('pointercancel', end);
+}
+
+/* ================= Eventos ================= */
+const actions = {
+  mode: el => setMode(el.dataset.mode),
+  theme: () => cycleTheme(),
+  print: () => doPrint(),
+  export: () => exportJSON(),
+  import: () => $('#import-file').click(),
+  'reset-example': () => resetExample(),
+  'day-select': el => { settings.dayId = el.dataset.day; save(); renderAll(); },
+  'day-add': () => addDay(),
+  'day-edit': () => editDay(planDay()),
+  'event-edit': () => editEvent(),
+  'block-add': () => editBlock(planDay(), null, planDay().blocks.length),
+  'block-insert': el => editBlock(planDay(), null, +el.dataset.at),
+  'block-edit': el => editBlock(planDay(), el.dataset.id),
+  'block-dup': el => dupBlock(planDay(), el.dataset.id),
+  'block-del': el => delBlock(planDay(), el.dataset.id),
+  'block-up': el => moveBlock(planDay(), el.dataset.id, -1),
+  'block-down': el => moveBlock(planDay(), el.dataset.id, 1),
+  'trans-edit': el => editTrans(planDay(), el.dataset.from, el.dataset.to),
+  'live-start': () => liveStart(),
+  'live-advance': () => liveAdvance(),
+  'live-undo': () => liveUndo(),
+  'live-adjust': el => liveAdjust(+el.dataset.delta),
+  'live-reset': () => liveReset(),
+  fullscreen: () => toggleFullscreen(),
+  wake: () => toggleWake(),
+};
+document.addEventListener('click', e => {
+  $$('details.menu[open]').forEach(m => { if (!m.contains(e.target)) m.open = false; });
+  const el = e.target.closest('[data-action]');
+  if (!el || el.disabled) return;
+  const menu = el.closest('details.menu'); if (menu) menu.open = false;
+  const fn = actions[el.dataset.action];
+  if (fn) { e.preventDefault(); fn(el, e); }
+});
+document.addEventListener('change', e => {
+  const t = e.target;
+  if (t.matches('[data-check]')) {
+    if (t.checked) live.checks[t.dataset.check] = true; else delete live.checks[t.dataset.check];
+    saveNow(); renderLive();
+  } else if (t.matches('[data-live-day]')) changeLiveDay(t);
+  else if (t.id === 'import-file') { const f = t.files && t.files[0]; t.value = ''; if (f) importFile(f); }
+});
+document.addEventListener('toggle', e => { const d = e.target; if (d.dataset && d.dataset.remember) uiOpen[d.dataset.remember] = d.open; }, true);
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') $$('details.menu[open]').forEach(m => { m.open = false; });
+  if (settings.mode !== 'live' || $('#dlg').open) return;
+  if (e.target.closest('input, textarea, select, [contenteditable]')) return;
+  if (e.key === 'ArrowRight' || e.key === 'PageDown') { e.preventDefault(); liveAdvance(); }
+  else if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'z') { e.preventDefault(); liveUndo(); }
+});
+$('#dlg').addEventListener('click', e => { if (e.target === e.currentTarget) e.currentTarget.close(); });
+window.addEventListener('beforeprint', renderPrint);
+window.addEventListener('pagehide', saveNow);
+document.addEventListener('visibilitychange', () => {
+  if (document.visibilityState !== 'visible' || settings.mode !== 'live') return;
+  tickLive();
+  if (settings.wake) requestWake();
+});
+// Sincroniza com outro separador aberto no mesmo navegador.
+window.addEventListener('storage', e => {
+  if (e.key !== STORAGE_KEY || !e.newValue || $('#dlg').open) return;
+  try {
+    const d = JSON.parse(e.newValue);
+    state = normalizeState(d.state) || state;
+    live = normalizeLive(d.live);
+    renderAll();
+  } catch (_) {}
+});
+
+/* ================= Arranque ================= */
+load();
+renderAll();
+initDrag();
+if (settings.mode === 'live') { startTick(); if (settings.wake) requestWake(); }
+saveNow();
+if (!storageOk) toast('Armazenamento local indisponível: use Dados › Exportar para guardar uma cópia.');
+})();
+</script>
+</body>
+</html>
