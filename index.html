@@ -169,6 +169,11 @@ button{touch-action:manipulation}
 .tl-meta span{display:inline-flex;align-items:center;gap:6px}
 .tl-notes{margin:6px 0 0;font-size:14px;color:var(--muted);white-space:pre-line}
 .tl-tools{display:flex;flex-wrap:wrap;gap:2px;margin-top:6px}
+.songs-h{display:flex;align-items:center;gap:6px;font-size:11.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.songs-h .ic{width:15px;height:15px}
+.tl-songs{margin-top:8px}
+.tl-songs ol{margin:4px 0 0;padding-left:24px;columns:230px 2;column-gap:30px;font-size:14px}
+.tl-songs li{break-inside:avoid;padding:1px 0}
 .is-over>.tl-time{color:var(--danger)}
 .flash .tl-card{animation:flash 1.4s ease}
 @keyframes flash{0%{box-shadow:0 0 0 4px var(--accent)}100%{box-shadow:var(--shadow)}}
@@ -302,6 +307,12 @@ input.invalid{border-color:var(--danger);box-shadow:0 0 0 3px var(--danger-soft)
 .lv-adjval{min-width:96px;text-align:center;font-weight:800;font-size:18px;font-variant-numeric:tabular-nums}
 .lv-adjlabel{font-size:15px;color:var(--muted);font-weight:700;margin-right:4px}
 .lv-notes{margin:0;font-size:17px;color:var(--muted);white-space:pre-line;border-top:1px solid var(--border);padding-top:12px}
+.lv-songs{border-top:1px solid var(--border);padding-top:12px}
+.lv-songs .songs-h{font-size:13px}
+.lv-songs ol{margin:6px 0 0;padding-left:30px;columns:260px 2;column-gap:36px;font-size:19px;line-height:1.45}
+.lv-songs li{break-inside:avoid}
+.lv-nb-songs{display:flex;gap:8px;align-items:flex-start;margin:8px 0 0;font-size:15px;color:var(--muted);line-height:1.4}
+.lv-nb-songs .ic{margin-top:1px}
 .lv-actions{display:flex;gap:10px;margin-top:auto;flex-wrap:wrap}
 .lv-advance{flex:1 1 260px;min-height:78px;font-size:24px;border-radius:14px;flex-direction:column;gap:2px;line-height:1.15;white-space:normal;text-align:center}
 .lv-advance .row{display:inline-flex;align-items:center;gap:10px}
@@ -347,7 +358,7 @@ input.invalid{border-color:var(--danger);box-shadow:0 0 0 3px var(--danger-soft)
   @page{size:A4;margin:10mm 11mm 11mm}
   :root:root:root{--c-abertura:#2f6db5;--c-adoracao:#7449c0;--c-oracao:#1b8475;--c-palavra:#a66a0f;--c-ofertorio:#3b8a3e;--c-testemunho:#b8507f;--c-avisos:#56687b;--c-intervalo:#7f848d;--c-refeicao:#bf5a26;--c-encerramento:#ad3443;--c-outro:#6b6f76;color-scheme:light}
   html,body{background:#fff!important;color:#111!important}
-  body{font-size:9.5pt;line-height:1.35}
+  body{font-size:9.5pt;line-height:1.3}
   #app,#toast,dialog{display:none!important}
   #print-root{display:block}
   *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
@@ -360,18 +371,22 @@ input.invalid{border-color:var(--danger);box-shadow:0 0 0 3px var(--danger-soft)
   .pr-over{color:#b42318;font-weight:700}
   .pr-table{width:100%;border-collapse:collapse;table-layout:fixed}
   .pr-table th{text-align:left;font-size:8pt;text-transform:uppercase;letter-spacing:.04em;color:#444;border-bottom:1pt solid #888;padding:3pt 5pt}
-  .pr-table td{padding:4pt 5pt;vertical-align:top}
+  .pr-table td{padding:3pt 5pt;vertical-align:top}
   .pr-grp{break-inside:avoid}
   .pr-block td{border-top:.8pt solid #999;font-size:8.5pt}
   .pr-block td:first-child{border-left:4pt solid var(--tc);font-weight:700;white-space:nowrap;font-size:9pt}
   .pr-title b{font-size:10pt}
   .pr-type{font-size:7pt;text-transform:uppercase;color:#666;margin-left:4pt;font-weight:700;letter-spacing:.04em}
-  .pr-notes{font-size:8pt;color:#555;white-space:pre-line;margin-top:2pt}
-  .pr-trans td{background:#f1f3f6;font-size:8pt;color:#333;padding-top:3pt;padding-bottom:3pt}
+  .pr-notes{font-size:8pt;color:#555;white-space:pre-line;margin-top:1pt}
+  .pr-extra td{padding-top:0;font-size:8pt}
+  .pr-extra td:first-child{border-left:4pt solid var(--tc)}
+  .pr-songs{color:#222}
+  .pr-songs b{font-size:7pt;text-transform:uppercase;letter-spacing:.04em;color:#555;margin-right:3pt}
+  .pr-trans td{background:#f1f3f6;font-size:8pt;color:#333;padding-top:2pt;padding-bottom:2pt}
   .pr-trans td:first-child{border-left:4pt solid #c3cad3;color:#555;white-space:nowrap}
   .pr-th{font-weight:700;color:#3f4d5c}
   .pr-chk{list-style:none;margin:2pt 0 0;padding:0;columns:2;column-gap:14pt}
-  .pr-chk li{break-inside:avoid;padding:.8pt 0}
+  .pr-chk li{break-inside:avoid;padding:.3pt 0}
   .pr-box{display:inline-block;width:8pt;height:8pt;border:.9pt solid #333;border-radius:1.5pt;vertical-align:-1pt;margin-right:4pt;background:#fff}
   .pr-cat{font-weight:800;font-size:7pt;text-transform:uppercase;color:#555;margin-right:3pt;letter-spacing:.03em}
   .pr-foot{margin-top:8pt;font-size:7.5pt;color:#666;display:flex;justify-content:space-between}
@@ -471,6 +486,7 @@ const ICONS = {
   alert: '<path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/><path d="M12 9v4M12 17h.01"/>',
   check: '<path d="m5 12 5 5L20 7"/>',
   arrow: '<path d="M5 12h14M13 6l6 6-6 6"/>',
+  music: '<path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/>',
 };
 const LOGO = '<svg class="logo" viewBox="0 0 32 32" aria-hidden="true"><path d="M5 13.5 16 4l11 9.5V28H5Z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/><path d="M11 18h10M11 22.5h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>';
 
@@ -487,6 +503,8 @@ const cap = s => (s ? s.charAt(0).toUpperCase() + s.slice(1) : s);
 const icon = (name, cls) => `<svg class="ic${cls ? ' ' + cls : ''}" viewBox="0 0 24 24" aria-hidden="true" focusable="false">${ICONS[name] || ''}</svg>`;
 const catTag = (cat, label) => `<span class="cat k-${esc(cat)}">${esc(label || catShort(cat))}</span>`;
 const plural = (n, one, many) => `${n} ${n === 1 ? one : many}`;
+const songsHTML = (songs, cls) => `<div class="${cls}"><div class="songs-h">${icon('music')}Repertório · ${plural(songs.length, 'música', 'músicas')}</div><ol>${songs.map(s => `<li>${esc(s)}</li>`).join('')}</ol></div>`;
+const songsInline = songs => songs.map((s, i) => `${i + 1}. ${esc(s)}`).join(' · ');
 
 function parseHM(s) { const m = /^(\d{1,2}):(\d{2})/.exec(str(s)); if (!m) return null; const h = +m[1], mi = +m[2]; return h < 24 && mi < 60 ? h * 60 + mi : null; }
 function normHM(s) { const v = parseHM(s); return v == null ? '' : pad2(Math.floor(v / 60)) + ':' + pad2(v % 60); }
@@ -512,16 +530,21 @@ const slug = s => str(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').
 /* ================= Dados de exemplo ================= */
 function exampleState() {
   const CENTRO = 'Círculo central (banda 360º)';
-  const B = (title, type, duration, owner, place, notes = '') => ({ id: uid(), title, type, duration, owner, place, notes });
+  const B = (title, type, duration, owner, place, notes = '', songs = []) => ({ id: uid(), title, type, duration, owner, place, notes, songs });
   const blocks = [
     B('Abertura + intercessão', 'abertura', 30, 'Pr. Jacinto · Pra. Marta · Pr. Caetano (sugestão)', CENTRO,
       'Período de intercessão / aquecimento: cada intercessor ora por um tema diferente. Nomes em sugestão, por confirmar.\nImportante ter fundo musical durante todo o período (possivelmente a Nena, por confirmar).'),
-    B('Adoração — INC', 'adoracao', 40, 'Louvor INC', CENTRO),
+    B('Adoração — INC', 'adoracao', 40, 'Louvor INC', CENTRO,
+      'Setlist possível, feito em conjunto com o Nathan.',
+      ['Cristo é meu fundamento', 'Great are you lord (Bethel)', 'Digno de tudo', 'Obsession (Martin Smith)', 'Yahwe tens meu Coração (Alessandro)', 'Firmado na Rocha (Alessandro)']),
     B('Oração — intercessão em trios', 'oracao', 10, 'Pr. Leo (sugestão)', 'Plateia (anéis 1 a 3)',
       'Dinâmica de intercessão em trios no público.\nSugestão: aproveitar estes minutos para trocar de banda com discrição (INC → ZION/Altomonte).'),
-    B('Adoração — ZION / Altomonte', 'adoracao', 40, 'Louvor ZION / Altomonte', CENTRO),
+    B('Adoração — ZION / Altomonte', 'adoracao', 40, 'Louvor ZION / Altomonte', CENTRO, '',
+      ['Volto os meus olhos - Davi', 'Vem Reinar em mim + voltemos ao início - Mari', 'Sobre as águas - Mari', 'Ao único']),
     B('Palavra — Tabernáculo', 'palavra', 20, 'Pra. Eunice', CENTRO, 'Mensagem: Tabernáculo.'),
-    B('Adoração — CCFV', 'adoracao', 40, 'Louvor CCFV', CENTRO),
+    B('Adoração — CCFV', 'adoracao', 40, 'Louvor CCFV', CENTRO,
+      'Alinhamento sujeito a alterações.',
+      ['Incensário', 'Yeshua', 'Cristo', 'Canção do apocalipse', 'Me ama']),
     B('Encerramento', 'encerramento', 10, 'A definir', CENTRO,
       'Oração final e bênção; saída organizada pelos 4 corredores radiais.\nO programa só indica o início (21h30): os 10 min são um valor de exemplo.'),
   ];
@@ -618,6 +641,7 @@ function normalizeState(s) {
       type: TYPE_IDS.has(b.type) ? b.type : 'outro',
       duration: clampInt(b.duration, 0, 1440),
       owner: str(b.owner).trim(), place: str(b.place).trim(), notes: str(b.notes).trim(),
+      songs: Array.isArray(b.songs) ? b.songs.map(x => str(x).trim()).filter(Boolean).slice(0, 60) : [],
     }));
     const transitions = {};
     const src = d.transitions && typeof d.transitions === 'object' ? d.transitions : {};
@@ -899,6 +923,7 @@ function blockRowHTML(day, it, plan) {
       </div>
       <div class="tl-body">
         ${b.owner || b.place ? `<div class="tl-meta">${b.owner ? `<span>${icon('user')}${esc(b.owner)}</span>` : ''}${b.place ? `<span>${icon('pin')}${esc(b.place)}</span>` : ''}</div>` : ''}
+        ${b.songs.length ? songsHTML(b.songs, 'tl-songs') : ''}
         ${b.notes ? `<p class="tl-notes">${esc(b.notes)}</p>` : ''}
         <div class="tl-tools">
           <button type="button" class="tool" data-action="block-up" data-id="${b.id}"${i === 0 ? ' disabled' : ''} aria-label="Subir" title="Subir">${icon('up')}</button>
@@ -940,11 +965,11 @@ function legendHTML() {
 }
 
 /* ================= Diálogos ================= */
-let dlgSeq = 0;
+let dlgSeq = 0, dlgCancel = null;
 function openDialog(o) {
   const dlg = $('#dlg');
+  if (dlg.open) { if (dlgCancel) dlgCancel(); else dlg.close(); }
   const my = ++dlgSeq;
-  if (dlg.open) dlg.close();
   dlg.className = o.wide ? 'wide' : '';
   dlg.innerHTML = `<form class="dlg-form" novalidate autocomplete="off">
     <header class="dlg-head"><h2>${esc(o.title)}</h2><button type="button" class="icon-btn" data-dlg="close" aria-label="Fechar">${icon('x')}</button></header>
@@ -952,20 +977,26 @@ function openDialog(o) {
     <footer class="dlg-foot">${o.extra || ''}<span class="grow"></span><button type="button" class="btn" data-dlg="close">Cancelar</button><button type="submit" class="btn ${o.danger ? 'danger-solid' : 'primary'}">${esc(o.submitLabel || 'Guardar')}</button></footer>
   </form>`;
   const form = dlg.querySelector('form');
-  let done = false;
-  form.addEventListener('submit', e => { e.preventDefault(); if (o.onSubmit && o.onSubmit(form) === false) return; done = true; dlg.close(); });
-  dlg.querySelectorAll('[data-dlg="close"]').forEach(b => b.addEventListener('click', () => dlg.close()));
-  const onClose = () => {
-    if (my !== dlgSeq) { dlg.removeEventListener('close', onClose); return; }
-    if (dlg.open) return;
-    dlg.removeEventListener('close', onClose);
-    if (o.onClose) o.onClose(done);
+  // Responde sem depender só do evento «close»: com a página em segundo plano pode chegar tarde ou nem chegar.
+  let settled = false;
+  const finish = ok => {
+    if (settled || my !== dlgSeq) return;
+    settled = true; dlgCancel = null;
+    dlg.removeEventListener('close', onEvt); dlg.removeEventListener('cancel', onEvt);
+    if (o.onClose) o.onClose(ok);
   };
-  dlg.addEventListener('close', onClose);
+  const onEvt = () => finish(false);
+  const shut = ok => { if (dlg.open) dlg.close(); finish(ok); };
+  dlgCancel = () => shut(false);
+  form.addEventListener('submit', e => { e.preventDefault(); if (o.onSubmit && o.onSubmit(form) === false) return; shut(true); });
+  dlg.querySelectorAll('[data-dlg="close"]').forEach(b => b.addEventListener('click', () => shut(false)));
+  dlg.addEventListener('close', onEvt);
+  dlg.addEventListener('cancel', onEvt);
   bindSteppers(dlg);
   if (typeof dlg.showModal === 'function') dlg.showModal(); else dlg.setAttribute('open', '');
   if (o.onOpen) o.onOpen(dlg, form);
 }
+const closeDialog = () => { if (dlgCancel) dlgCancel(); else $('#dlg').close(); };
 function ask(message, opts = {}) {
   return new Promise(resolve => {
     openDialog({ title: opts.title || 'Confirmar', body: `<p class="ask-msg">${esc(message)}</p>`, submitLabel: opts.ok || 'Confirmar', danger: !!opts.danger, onSubmit: () => true, onClose: ok => resolve(ok) });
@@ -988,7 +1019,7 @@ const stepper = (name, value, step, max) => `<div class="stepper"><button type="
 function editBlock(day, id, insertAt) {
   const src = id ? day.blocks.find(b => b.id === id) : null;
   if (id && !src) return;
-  const b = src || { title: '', type: 'adoracao', duration: 15, owner: '', place: '', notes: '' };
+  const b = src || { title: '', type: 'adoracao', duration: 15, owner: '', place: '', notes: '', songs: [] };
   const plan = buildPlan(day);
   let startMin;
   if (src) startMin = plan.items.find(x => x.key === 'b:' + id).start;
@@ -1008,6 +1039,7 @@ function editBlock(day, id, insertAt) {
       <label class="field"><span>Responsável</span><input name="owner" value="${esc(b.owner)}" maxlength="140"></label>
       <label class="field"><span>Local / espaço</span><input name="place" list="spaces-list" value="${esc(b.place)}" maxlength="140"></label>
       <datalist id="spaces-list">${state.event.spaces.map(s => `<option value="${esc(s)}"></option>`).join('')}</datalist>
+      <label class="field"><span>Músicas / repertório <small>(uma por linha, pela ordem — a numeração é automática)</small></span><textarea name="songs" rows="5">${esc(b.songs.join('\n'))}</textarea></label>
       <label class="field"><span>Notas</span><textarea name="notes" rows="4">${esc(b.notes)}</textarea></label>`,
     extra: src ? `<button type="button" class="btn danger" data-dlg="delete">${icon('trash')}<span>Apagar</span></button>` : '',
     onOpen: (dlg, form) => {
@@ -1015,7 +1047,7 @@ function editBlock(day, id, insertAt) {
       const upd = () => { $('#blk-time', dlg).textContent = `${fmtHM(startMin)} – ${fmtHM(startMin + clampInt(dur.value, 0, 1440))}`; };
       dur.addEventListener('input', upd); upd();
       const del = dlg.querySelector('[data-dlg="delete"]');
-      if (del) del.addEventListener('click', () => { dlg.close(); delBlock(day, id); });
+      if (del) del.addEventListener('click', () => { closeDialog(); delBlock(day, id); });
       if (!src) form.elements.namedItem('title').focus();
     },
     onSubmit: form => {
@@ -1023,7 +1055,9 @@ function editBlock(day, id, insertAt) {
       const title = g('title').trim();
       if (!title) { markInvalid(form, 'title'); return false; }
       const before = undoPoint();
-      const data = { title, type: TYPE_IDS.has(g('type')) ? g('type') : 'outro', duration: clampInt(g('duration'), 0, 1440), owner: g('owner').trim(), place: g('place').trim(), notes: g('notes').trim() };
+      // Aceita listas coladas já numeradas («1. », «2) », «3 - ») sem estragar títulos como «10.000 Razões».
+      const songs = g('songs').split('\n').map(s => s.replace(/^\s*\d{1,2}\s*(?:[.)]|[-–])\s+/, '').trim()).filter(Boolean);
+      const data = { title, type: TYPE_IDS.has(g('type')) ? g('type') : 'outro', duration: clampInt(g('duration'), 0, 1440), owner: g('owner').trim(), place: g('place').trim(), notes: g('notes').trim(), songs };
       if (src) Object.assign(src, data);
       else {
         const nb = Object.assign({ id: uid() }, data);
@@ -1118,9 +1152,9 @@ function editDay(day) {
       <p class="hint">A hora limite serve de alerta: se o fim previsto (ou projetado, ao vivo) a ultrapassar, a ferramenta avisa. Deixe vazio para não usar.</p>`,
     extra: `<button type="button" class="btn" data-dlg="dup">${icon('copy')}<span>Duplicar dia</span></button>${state.days.length > 1 ? `<button type="button" class="btn danger" data-dlg="del">${icon('trash')}<span>Apagar dia</span></button>` : ''}`,
     onOpen: dlg => {
-      dlg.querySelector('[data-dlg="dup"]').addEventListener('click', () => { dlg.close(); dupDay(day); });
+      dlg.querySelector('[data-dlg="dup"]').addEventListener('click', () => { closeDialog(); dupDay(day); });
       const del = dlg.querySelector('[data-dlg="del"]');
-      if (del) del.addEventListener('click', () => { dlg.close(); delDay(day); });
+      if (del) del.addEventListener('click', () => { closeDialog(); delDay(day); });
     },
     onSubmit: form => {
       const g = n => str(form.elements.namedItem(n).value);
@@ -1174,7 +1208,7 @@ function dupBlock(day, id) {
   const i = day.blocks.findIndex(b => b.id === id); if (i < 0) return;
   const before = undoPoint();
   const src = day.blocks[i], next = day.blocks[i + 1];
-  const copy = Object.assign({}, src, { id: uid(), title: src.title + ' (cópia)' });
+  const copy = Object.assign({}, src, { id: uid(), title: src.title + ' (cópia)', songs: src.songs.slice() });
   day.blocks.splice(i + 1, 0, copy);
   if (next) { const t = day.transitions[transKey(src, next)]; if (t) day.transitions[transKey(copy, next)] = cloneTrans(t); }
   flashId = copy.id;
@@ -1197,7 +1231,7 @@ function addDay() {
 function dupDay(day) {
   const before = undoPoint();
   const map = {};
-  const blocks = day.blocks.map(b => { const nb = Object.assign({}, b, { id: uid() }); map[b.id] = nb.id; return nb; });
+  const blocks = day.blocks.map(b => { const nb = Object.assign({}, b, { id: uid(), songs: b.songs.slice() }); map[b.id] = nb.id; return nb; });
   const transitions = {};
   Object.keys(day.transitions).forEach(k => { const [a, z] = k.split('>'); if (map[a] && map[z]) transitions[map[a] + '>' + map[z]] = cloneTrans(day.transitions[k]); });
   const nd = { id: uid(), label: day.label ? day.label + ' (cópia)' : '', date: addDays(day.date, 1), start: day.start, limit: day.limit, blocks, transitions };
@@ -1271,7 +1305,11 @@ function renderPrint() {
           ${t.items.length ? `<ul class="pr-chk">${t.items.map(x => `<li><span class="pr-box"></span><span class="pr-cat">${esc(catShort(x.cat))}</span>${esc(x.text)}</li>`).join('')}</ul>` : ''}
         </td></tr>`;
       }
-      return `<tbody class="pr-grp t-${b.type}"><tr class="pr-block"><td>${fmtHM(it.start)}–${fmtHM(it.end)}</td><td class="pr-title"><b>${esc(b.title)}</b><span class="pr-type">${esc(typeOf(b.type).short)}</span>${b.notes ? `<div class="pr-notes">${esc(b.notes)}</div>` : ''}</td><td>${fmtDur(b.duration)}</td><td>${esc(b.owner)}</td><td>${esc(b.place)}</td></tr>${trow}</tbody>`;
+      // Músicas e notas numa linha à largura da tabela: ocupa menos altura do que na coluna «Bloco».
+      const extra = b.songs.length || b.notes
+        ? `<tr class="pr-extra"><td></td><td colspan="4">${b.songs.length ? `<div class="pr-songs"><b>Músicas</b> ${songsInline(b.songs)}</div>` : ''}${b.notes ? `<div class="pr-notes">${esc(b.notes)}</div>` : ''}</td></tr>`
+        : '';
+      return `<tbody class="pr-grp t-${b.type}"><tr class="pr-block"><td>${fmtHM(it.start)}–${fmtHM(it.end)}</td><td class="pr-title"><b>${esc(b.title)}</b><span class="pr-type">${esc(typeOf(b.type).short)}</span></td><td>${fmtDur(b.duration)}</td><td>${esc(b.owner)}</td><td>${esc(b.place)}</td></tr>${extra}${trow}</tbody>`;
     }).join('');
     return `<section class="pr-day">
       <header class="pr-head">
@@ -1424,6 +1462,7 @@ function nowHTML(L) {
       <button type="button" class="btn" data-action="live-adjust" data-delta="5" aria-label="Alongar 5 minutos">+5</button>
     </div>
     ${isTrans ? checklistHTML(m.trans, 'Checklist desta transição') : ''}
+    ${!isTrans && m.block.songs.length ? songsHTML(m.block.songs, 'lv-songs') : ''}
     ${!isTrans && m.block.notes ? `<p class="lv-notes">${esc(m.block.notes)}</p>` : ''}
     <div class="lv-actions">
       <button type="button" class="btn lv-undo" data-action="live-undo">${icon('undo')} Desfazer</button>
@@ -1461,7 +1500,8 @@ function nextBlockHTML(r, rowIndex) {
   return `<div class="lv-nb t-${b.type}">
     <div class="lv-nb-time"><span data-proj-row="${rowIndex}">~${fmtClock(r.js)}</span><small>previsto ${fmtClock(r.ps)}</small></div>
     <div><span class="type-chip">${esc(typeLabel(b.type))}</span><h3>${esc(b.title)}</h3>
-      <p class="lv-meta">${b.owner ? `<span>${icon('user')}${esc(b.owner)}</span>` : ''}${b.place ? `<span>${icon('pin')}${esc(b.place)}</span>` : ''}<span>${icon('clock')}${fmtDur(b.duration)}</span></p></div>
+      <p class="lv-meta">${b.owner ? `<span>${icon('user')}${esc(b.owner)}</span>` : ''}${b.place ? `<span>${icon('pin')}${esc(b.place)}</span>` : ''}<span>${icon('clock')}${fmtDur(b.duration)}</span></p>
+      ${b.songs.length ? `<p class="lv-nb-songs">${icon('music')}<span>${songsInline(b.songs)}</span></p>` : ''}</div>
   </div>`;
 }
 
@@ -1503,7 +1543,9 @@ function programRows(L) {
   return head + L.rows.map(r => {
     const m = r.m;
     const type = m.kind === 'block' ? m.block.type : 'trans';
-    const sub = m.kind === 'block' ? m.block.owner : m.trans.desc;
+    const sub = m.kind === 'block'
+      ? [m.block.owner, m.block.songs.length ? plural(m.block.songs.length, 'música', 'músicas') : ''].filter(Boolean).join(' · ')
+      : m.trans.desc;
     let real = '', dur = fmtDur(r.eff / 60000), dl = null;
     if (r.status === 'done') {
       real = r.as != null ? fmtClock(r.as) : '—';
@@ -1790,7 +1832,7 @@ document.addEventListener('keydown', e => {
   if (e.key === 'ArrowRight' || e.key === 'PageDown') { e.preventDefault(); liveAdvance(); }
   else if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'z') { e.preventDefault(); liveUndo(); }
 });
-$('#dlg').addEventListener('click', e => { if (e.target === e.currentTarget) e.currentTarget.close(); });
+$('#dlg').addEventListener('click', e => { if (e.target === e.currentTarget) closeDialog(); });
 window.addEventListener('beforeprint', renderPrint);
 window.addEventListener('pagehide', saveNow);
 document.addEventListener('visibilitychange', () => {

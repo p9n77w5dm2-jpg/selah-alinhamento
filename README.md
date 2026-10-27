@@ -7,7 +7,8 @@ equipa de coordenação planear, imprimir e acompanhar ao vivo o alinhamento do 
 
 ## Como usar
 
-- **Planeamento:** blocos com tipo, duração, responsável, local e notas. Entre cada
+- **Planeamento:** blocos com tipo, duração, responsável, local, repertório (músicas)
+  e notas. Entre cada
   par de blocos há uma transição com checklist (palco, som, luz, projeção, pessoas,
   espaço). As horas são calculadas a partir da hora de início do dia; reordena-se com
   as setas ou a arrastar (também ao toque).
