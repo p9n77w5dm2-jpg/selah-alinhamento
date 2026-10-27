@@ -266,6 +266,11 @@ input.invalid{border-color:var(--danger);box-shadow:0 0 0 3px var(--danger-soft)
 #toast.show{transform:translate(-50%,0)}
 #toast button{border:0;background:rgba(255,255,255,.16);color:#fff;font-weight:700;padding:7px 12px;border-radius:8px;cursor:pointer;white-space:nowrap}
 
+/* ---------- Aviso de versão nova ---------- */
+.update-bar{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;width:calc(100% - 32px);max-width:1248px;margin:14px auto 0;padding:10px 12px 10px 14px;border:1px solid var(--warn);border-radius:12px;background:var(--warn-soft);font-size:14px;line-height:1.35}
+.update-bar p{margin:0;flex:1 1 260px}
+.update-bar .btns{display:flex;flex-wrap:wrap;gap:8px}
+
 /* ---------- Ao vivo ---------- */
 .live{max-width:1500px;margin:0 auto;padding:16px;display:grid;gap:16px;grid-template-columns:minmax(0,1fr);grid-template-areas:"clock" "status" "now" "next" "prog"}
 @media (min-width:920px){.live{grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);grid-template-areas:"clock status" "now next" "prog prog";padding:20px}}
@@ -396,6 +401,7 @@ input.invalid{border-color:var(--danger);box-shadow:0 0 0 3px var(--danger-soft)
 <body>
 <div id="app">
   <header class="topbar" id="topbar"></header>
+  <div id="update-bar" class="update-bar" role="status" hidden></div>
   <main id="view-plan"></main>
   <main id="view-live" hidden></main>
 </div>
@@ -530,25 +536,26 @@ const slug = s => str(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').
 /* ================= Dados de exemplo ================= */
 function exampleState() {
   const CENTRO = 'Círculo central (banda 360º)';
-  const B = (title, type, duration, owner, place, notes = '', songs = []) => ({ id: uid(), title, type, duration, owner, place, notes, songs });
+  // Ids fixos: quando sai uma versão nova, o progresso ao vivo e a checklist marcada continuam a corresponder.
+  const B = (id, title, type, duration, owner, place, notes = '', songs = []) => ({ id: 'b-' + id, title, type, duration, owner, place, notes, songs });
   const blocks = [
-    B('Abertura + intercessão', 'abertura', 30, 'Pr. Jacinto · Pra. Marta · Pra. Eunice (sugestão)', CENTRO,
+    B('abertura', 'Abertura + intercessão', 'abertura', 30, 'Pr. Jacinto · Pra. Marta · Pra. Eunice (sugestão)', CENTRO,
       'Período de intercessão / aquecimento: cada intercessor ora por um tema diferente. Nomes em sugestão, por confirmar.\nImportante ter fundo musical durante todo o período (possivelmente a Nena, por confirmar).'),
-    B('Adoração — INC', 'adoracao', 40, 'Louvor INC', CENTRO,
+    B('inc', 'Adoração — INC', 'adoracao', 40, 'Louvor INC', CENTRO,
       'Setlist possível, feito em conjunto com o Nathan.',
       ['Cristo é meu fundamento', 'Great are you lord (Bethel)', 'Digno de tudo', 'Obsession (Martin Smith)', 'Yahwe tens meu Coração (Alessandro)', 'Firmado na Rocha (Alessandro)']),
-    B('Oração — intercessão em trios', 'oracao', 10, 'Pr. Leo (sugestão)', 'Plateia (anéis 1 a 3)',
+    B('oracao', 'Oração — intercessão em trios', 'oracao', 10, 'Pr. Leo (sugestão)', 'Plateia (anéis 1 a 3)',
       'Dinâmica de intercessão em trios no público.\nSugestão: aproveitar estes minutos para trocar de banda com discrição (INC → ZION/Altomonte).'),
-    B('Adoração — ZION / Altomonte', 'adoracao', 40, 'Louvor ZION / Altomonte', CENTRO, '',
+    B('zion', 'Adoração — ZION / Altomonte', 'adoracao', 40, 'Louvor ZION / Altomonte', CENTRO, '',
       ['Volto os meus olhos - Davi', 'Vem Reinar em mim + voltemos ao início - Mari', 'Sobre as águas - Mari', 'Ao único']),
-    B('Palavra — Tabernáculo', 'palavra', 20, 'Pra. Eunice', CENTRO, 'Mensagem: Tabernáculo.'),
-    B('Adoração — CCFV', 'adoracao', 40, 'Louvor CCFV', CENTRO,
+    B('palavra', 'Palavra — Tabernáculo', 'palavra', 20, 'Pra. Eunice', CENTRO, 'Mensagem: Tabernáculo.'),
+    B('ccfv', 'Adoração — CCFV', 'adoracao', 40, 'Louvor CCFV', CENTRO,
       'Alinhamento sujeito a alterações.',
       ['Incensário', 'Yeshua', 'Cristo', 'Canção do apocalipse', 'Me ama']),
-    B('Encerramento', 'encerramento', 10, 'A definir', CENTRO,
+    B('encerramento', 'Encerramento', 'encerramento', 10, 'A definir', CENTRO,
       'Oração final e bênção; saída organizada pelos 4 corredores radiais.\nO programa só indica o início (21h30): os 10 min são um valor de exemplo.'),
   ];
-  const T = (desc, items) => ({ duration: 0, desc, items: items.map(([cat, text]) => ({ id: uid(), cat, text })) });
+  const T = (desc, items) => ({ duration: 0, desc, items: items.map(([cat, text]) => ({ id: '', cat, text })) });
   const list = [
     T('Intercessores saem, o Louvor INC assume', [
       ['pessoas', 'Intercessores devolvem os microfones e saem pelo corredor radial'],
@@ -590,7 +597,11 @@ function exampleState() {
     ]),
   ];
   const transitions = {};
-  list.forEach((t, i) => { transitions[blocks[i].id + '>' + blocks[i + 1].id] = t; });
+  list.forEach((t, i) => {
+    const k = blocks[i].id + '>' + blocks[i + 1].id;
+    t.items.forEach(x => { x.id = 'c-' + hashStr(k + '|' + x.text); });
+    transitions[k] = t;
+  });
   return {
     version: 1,
     event: {
@@ -604,7 +615,7 @@ function exampleState() {
         + 'Por confirmar no local: entradas e saídas, percursos de evacuação, desníveis e bases das torres.\n'
         + 'A hora limite (21:45) é um valor de exemplo.',
     },
-    days: [{ id: uid(), label: 'Dia 1', date: '2026-10-31', start: '18:30', limit: '21:45', blocks, transitions }],
+    days: [{ id: 'dia-1', label: 'Dia 1', date: '2026-10-31', start: '18:30', limit: '21:45', blocks, transitions }],
   };
 }
 
@@ -655,6 +666,7 @@ function normalizeState(s) {
   if (!days.length) days.push({ id: uid(), label: '', date: '', start: '18:00', limit: '', blocks: [], transitions: {} });
   return {
     version: 1,
+    seed: /^[0-9a-z]{1,13}$/.test(str(s.seed)) ? s.seed : '',
     event: {
       name: str(ev.name).trim() || 'Evento sem nome',
       location: str(ev.location).trim(),
@@ -683,7 +695,7 @@ function normalizeLive(l) {
 function load() {
   let data = null;
   try { const raw = localStorage.getItem(STORAGE_KEY); if (raw) data = JSON.parse(raw); } catch (_) { storageOk = false; }
-  state = (data && normalizeState(data.state)) || exampleState();
+  const saved = data && normalizeState(data.state);
   live = normalizeLive(data && data.live);
   const s = data && data.settings && typeof data.settings === 'object' ? data.settings : {};
   const th = v => (['auto', 'light', 'dark'].includes(v) ? v : null);
@@ -695,6 +707,10 @@ function load() {
     liveDayId: typeof s.liveDayId === 'string' ? s.liveDayId : null,
     wake: s.wake !== false,
   };
+  const pub = publishedState();
+  pubSeed = pub.seed;
+  state = saved || pub;
+  if (saved) updatedOnLoad = syncPublished() === 'applied';
 }
 function save() { clearTimeout(saveTimer); saveTimer = setTimeout(saveNow, 250); }
 function saveNow() {
@@ -726,6 +742,88 @@ function commit(o = {}) {
   save();
   renderAll();
   if (o.message) toast(o.message, o.undo ? () => restore(o.undo) : null);
+}
+
+/* ================= Versão publicada ================= */
+// O alinhamento embutido na página é a versão publicada. Cada cópia guarda em `seed` a impressão digital da versão
+// de onde partiu: se não foi editada, passa sozinha para a versão nova; se foi (ou se o ao vivo está a decorrer),
+// aparece um aviso e quem está no dispositivo escolhe.
+const LEGACY_SEEDS = ['1docru5', 'znynaa']; // versões publicadas a 27/10/2026, antes de as cópias guardarem `seed`
+let pubSeed = '', pendingUpdate = false, remoteNewer = false, updatedOnLoad = false, remoteAt = 0;
+
+function hashStr(txt) {
+  let h = 0x811c9dc5;
+  for (let i = 0; i < txt.length; i++) { h ^= txt.charCodeAt(i); h = Math.imul(h, 0x01000193); }
+  return (h >>> 0).toString(36);
+}
+// Só conta o conteúdo: ids, tema e progresso ao vivo ficam de fora.
+function contentFp(s) {
+  const e = s.event;
+  return hashStr(JSON.stringify([e.name, e.location, e.spaces, e.notes, s.days.map(d => [d.label, d.date, d.start, d.limit,
+    d.blocks.map(b => [b.title, b.type, b.duration, b.owner, b.place, b.notes, b.songs]),
+    adjacentKeys(d).map(k => { const t = d.transitions[k]; return hasContent(t) ? [t.duration, t.desc, t.items.map(x => [x.cat, x.text])] : 0; })])]));
+}
+function publishedState() { const s = normalizeState(exampleState()); s.seed = contentFp(s); return s; }
+const liveBusy = () => !!(live.startedAt && !live.endedAt && now() - live.startedAt < 12 * 3600e3);
+
+// Acerta `state` com a versão publicada. Devolve 'applied' (passou para a versão nova), 'seeded' (só registou a
+// versão de origem) ou '' (nada mudou; com alterações próprias ou ao vivo fica o aviso pendente).
+function syncPublished() {
+  const cur = contentFp(state);
+  if (cur === pubSeed) {
+    if (state.seed === pubSeed) return '';
+    if (liveBusy()) state.seed = pubSeed; else applyPublished(); // mesmo conteúdo: passa a ter os ids fixos
+    return 'seeded';
+  }
+  const base = state.seed || (LEGACY_SEEDS.includes(cur) ? cur : '');
+  if (base === pubSeed) return ''; // alterações feitas sobre a versão atual: ficam como estão
+  if (base && base === cur && !liveBusy()) { applyPublished(); return 'applied'; }
+  pendingUpdate = true;
+  return '';
+}
+function applyPublished() {
+  state = publishedState();
+  pendingUpdate = false;
+  if (live.dayId && !state.days.some(d => d.id === live.dayId)) live = emptyLive();
+  if (!state.days.some(d => d.id === settings.dayId)) settings.dayId = state.days[0].id;
+}
+function applyPending() {
+  if (!pendingUpdate) return;
+  const before = undoPoint();
+  applyPublished();
+  commit({ message: 'Alinhamento atualizado para a versão publicada', undo: before });
+}
+function keepMine() {
+  if (!pendingUpdate) return;
+  state.seed = pubSeed;
+  pendingUpdate = false;
+  commit({ message: 'Fica o alinhamento deste dispositivo' });
+}
+function renderUpdateBar() {
+  const el = $('#update-bar');
+  const msg = pendingUpdate
+    ? (liveBusy()
+      ? 'Há uma versão nova do alinhamento. Como o ao vivo está a decorrer, só muda se escolher atualizar.'
+      : 'Há uma versão nova do alinhamento. Este dispositivo tem alterações próprias: atualizar substitui-as (pode anular logo a seguir).')
+    : remoteNewer ? 'Há uma versão nova do alinhamento publicada.' : '';
+  el.hidden = !msg;
+  el.innerHTML = !msg ? '' : `<p>${esc(msg)}</p><div class="btns">${pendingUpdate
+    ? '<button type="button" class="btn sm primary" data-action="update-apply">Atualizar</button><button type="button" class="btn sm" data-action="update-keep">Manter a deste dispositivo</button>'
+    : '<button type="button" class="btn sm primary" data-action="update-reload">Atualizar</button>'}</div>`;
+}
+
+// Com a página aberta: compara o script publicado com o que está a correr (no arranque, ao voltar ao separador e de
+// minuto a minuto, no máximo uma vez a cada 4 min). Só conta uma resposta que seja mesmo esta página.
+const SELF_HASH = hashStr(($('script') || {}).textContent || '');
+async function checkRemote() {
+  if (remoteNewer || pendingUpdate || !/^https?:$/.test(location.protocol) || Date.now() - remoteAt < 4 * 60e3) return;
+  remoteAt = Date.now();
+  try {
+    const r = await fetch(location.href.split('#')[0], { cache: 'no-cache' });
+    if (!r.ok) return;
+    const s = new DOMParser().parseFromString(await r.text(), 'text/html').querySelector('script');
+    if (s && s.textContent.includes(STORAGE_KEY) && hashStr(s.textContent) !== SELF_HASH) { remoteNewer = true; renderUpdateBar(); }
+  } catch (_) {}
 }
 
 /* ================= Modelo: dias, blocos, transições ================= */
@@ -782,6 +880,7 @@ function applyTheme() {
 function renderAll() {
   applyTheme();
   renderTopbar();
+  renderUpdateBar();
   $('#view-plan').hidden = settings.mode !== 'plan';
   $('#view-live').hidden = settings.mode !== 'live';
   if (settings.mode === 'live') renderLive(); else renderPlan();
@@ -1282,8 +1381,9 @@ async function resetExample() {
   const ok = await ask('Repor os dados de exemplo? O alinhamento atual é substituído (pode exportar uma cópia antes).', { ok: 'Repor exemplo', danger: true });
   if (!ok) return;
   const before = undoPoint();
-  state = exampleState();
+  state = publishedState();
   live = emptyLive();
+  pendingUpdate = false;
   settings.dayId = state.days[0].id;
   commit({ message: 'Dados de exemplo repostos', undo: before });
 }
@@ -1788,6 +1888,9 @@ const actions = {
   export: () => exportJSON(),
   import: () => $('#import-file').click(),
   'reset-example': () => resetExample(),
+  'update-apply': () => applyPending(),
+  'update-keep': () => keepMine(),
+  'update-reload': () => location.reload(),
   'day-select': el => { settings.dayId = el.dataset.day; save(); renderAll(); },
   'day-add': () => addDay(),
   'day-edit': () => editDay(planDay()),
@@ -1836,7 +1939,9 @@ $('#dlg').addEventListener('click', e => { if (e.target === e.currentTarget) clo
 window.addEventListener('beforeprint', renderPrint);
 window.addEventListener('pagehide', saveNow);
 document.addEventListener('visibilitychange', () => {
-  if (document.visibilityState !== 'visible' || settings.mode !== 'live') return;
+  if (document.visibilityState !== 'visible') return;
+  checkRemote();
+  if (settings.mode !== 'live') return;
   tickLive();
   if (settings.wake) requestWake();
 });
@@ -1847,6 +1952,9 @@ window.addEventListener('storage', e => {
     const d = JSON.parse(e.newValue);
     state = normalizeState(d.state) || state;
     live = normalizeLive(d.live);
+    pendingUpdate = false;
+    // Uma página antiga (outro separador, ou a que acabou de recarregar) pode gravar uma versão anterior: volta a acertar.
+    if (syncPublished()) saveNow();
     renderAll();
   } catch (_) {}
 });
@@ -1858,6 +1966,9 @@ initDrag();
 if (settings.mode === 'live') { startTick(); if (settings.wake) requestWake(); }
 saveNow();
 if (!storageOk) toast('Armazenamento local indisponível: use Dados › Exportar para guardar uma cópia.');
+else if (updatedOnLoad) toast('Alinhamento atualizado para a versão mais recente');
+setTimeout(checkRemote, 5000);
+setInterval(() => { if (!document.hidden) checkRemote(); }, 60e3);
 })();
 </script>
 </body>
