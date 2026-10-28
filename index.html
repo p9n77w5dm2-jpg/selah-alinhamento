@@ -438,7 +438,9 @@ const CATS = [
   { id: 'palco', label: 'Palco e equipamento', short: 'Palco' },
   { id: 'som', label: 'Som', short: 'Som' },
   { id: 'luz', label: 'Luz', short: 'Luz' },
-  { id: 'projecao', label: 'Projeção', short: 'Projeção' },
+  // Sem projeção neste evento: fica escondida, mas válida nos dados guardados (senão as cópias antigas mudavam de
+  // impressão digital e deixavam de atualizar sozinhas).
+  { id: 'projecao', label: 'Projeção', short: 'Projeção', hidden: true },
   { id: 'pessoas', label: 'Pessoas', short: 'Pessoas' },
   { id: 'espaco', label: 'Espaço', short: 'Espaço' },
 ];
@@ -447,7 +449,6 @@ const catShort = id => (CATS.find(c => c.id === id) || CATS[0]).short;
 
 const SUGGESTIONS = [
   ['som', 'Trocar microfones'],
-  ['projecao', 'Mudar slides'],
   ['luz', 'Baixar luzes'],
   ['palco', 'Banda sai do palco'],
   ['pessoas', 'Crianças seguem para a sala infantil'],
@@ -562,7 +563,6 @@ function exampleState() {
       ['som', 'Fundo musical termina em fade; abrir os canais do INC'],
       ['palco', 'INC em posição no círculo: bateria, teclado, baixo, guitarra e vozes 1–4'],
       ['luz', 'Moving heads: ligar os feixes azuis de contraluz'],
-      ['projecao', 'Letras: carregar o alinhamento do INC'],
     ]),
     T('Pr. Leo entra; a banda fica num pad suave', [
       ['som', 'Microfone sem fios do Pr. Leo ligado e testado'],
@@ -575,7 +575,6 @@ function exampleState() {
       ['palco', 'Troca de músicos (confirmar instrumentos partilhados: bateria e teclado)'],
       ['som', 'Carregar a cena de mistura do ZION/Altomonte; fechar o microfone do Pr. Leo'],
       ['luz', 'Repor os tubos LED a 100% e os moving heads'],
-      ['projecao', 'Letras: alinhamento do ZION/Altomonte'],
     ]),
     T('A banda sai; a Pra. Eunice vem ao centro', [
       ['som', 'Microfone da Pra. Eunice (headset ou lapela) ligado e testado'],
@@ -587,7 +586,6 @@ function exampleState() {
       ['palco', 'CCFV entra no círculo durante o apelo final'],
       ['som', 'Cena de mistura do CCFV; fechar o microfone da pregadora quando sair'],
       ['luz', 'Repor o ambiente de adoração: tubos LED e feixes azuis'],
-      ['projecao', 'Letras: alinhamento do CCFV'],
     ]),
     T('Preparar a saída em segurança', [
       ['som', 'Microfone para a oração final e avisos'],
@@ -1059,7 +1057,7 @@ function transRowHTML(it) {
 function legendHTML() {
   return `<section class="card legend" aria-label="Legenda">
     <h3>Tipos de bloco</h3><ul>${TYPES.map(t => `<li class="t-${t.id}"><span class="sw"></span>${esc(t.label)}</li>`).join('')}<li class="t-trans"><span class="sw"></span>Transição</li></ul>
-    <h3>Categorias das ações</h3><ul>${CATS.map(c => `<li>${catTag(c.id, c.label)}</li>`).join('')}</ul>
+    <h3>Categorias das ações</h3><ul>${CATS.filter(c => !c.hidden).map(c => `<li>${catTag(c.id, c.label)}</li>`).join('')}</ul>
   </section>`;
 }
 
@@ -1169,7 +1167,7 @@ function editBlock(day, id, insertAt) {
 }
 
 const chkRowHTML = x => `<li data-id="${esc(x.id)}">
-  <select aria-label="Categoria">${CATS.map(c => `<option value="${c.id}"${c.id === x.cat ? ' selected' : ''}>${esc(c.label)}</option>`).join('')}</select>
+  <select aria-label="Categoria">${CATS.filter(c => !c.hidden || c.id === x.cat).map(c => `<option value="${c.id}"${c.id === x.cat ? ' selected' : ''}>${esc(c.label)}</option>`).join('')}</select>
   <input type="text" value="${esc(x.text)}" placeholder="Descrever a ação" aria-label="Ação" maxlength="200">
   <button type="button" class="tool" data-dlg="row-up" aria-label="Subir">${icon('up')}</button>
   <button type="button" class="tool" data-dlg="row-down" aria-label="Descer">${icon('down')}</button>

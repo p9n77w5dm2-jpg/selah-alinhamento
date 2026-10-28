@@ -9,8 +9,8 @@ equipa de coordenação planear, imprimir e acompanhar ao vivo o alinhamento do 
 
 - **Planeamento:** blocos com tipo, duração, responsável, local, repertório (músicas)
   e notas. Entre cada
-  par de blocos há uma transição com checklist (palco, som, luz, projeção, pessoas,
-  espaço). As horas são calculadas a partir da hora de início do dia; reordena-se com
+  par de blocos há uma transição com checklist (palco, som, luz, pessoas, espaço; não há
+  projeção neste evento). As horas são calculadas a partir da hora de início do dia; reordena-se com
   as setas ou a arrastar (também ao toque).
 - **Imprimir:** uma página A4 por dia, com a checklist de cada transição.
 - **Ao vivo:** relógio, momento atual com contagem decrescente, próximo momento com a
