@@ -12,7 +12,14 @@ equipa de coordenação planear, imprimir e acompanhar ao vivo o alinhamento do 
   par de blocos há uma transição com checklist (palco, som, luz, pessoas, espaço; não há
   projeção neste evento). As horas são calculadas a partir da hora de início do dia; reordena-se com
   as setas ou a arrastar (também ao toque).
-- **Imprimir:** uma página A4 por dia, com a checklist de cada transição.
+- **Postos:** aba com os postos de apoio (estacionamento, apoio ao público…): onde, quando,
+  quantas pessoas, o que fazer e quem fica em cada um (um nome vazio aparece como «a definir»).
+  Sem horas, o posto conta para todo o evento. O **esquema do espaço** (vista aérea e planta)
+  está nesta aba, numa secção fechada: as imagens só carregam quando se abre, e um toque amplia.
+  O botão «Esquema do espaço» no cartão do evento leva lá diretamente. Para mandar à equipa:
+  `…/selah-alinhamento/#postos` abre a aba; `…/#esquema` abre-a já com o esquema à vista.
+- **Imprimir:** uma página A4 por dia, com a checklist de cada transição, e uma página com os
+  postos (com uma linha para escrever os nomes em falta).
 - **Ao vivo:** relógio, momento atual com contagem decrescente, próximo momento com a
   checklist da transição, desvio acumulado e fim projetado. «Avançar» regista a hora
   real; −5/−1/+1/+5 encurtam ou alongam o momento atual. No portátil, → ou Page Down
