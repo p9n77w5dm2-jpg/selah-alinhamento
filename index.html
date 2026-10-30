@@ -394,11 +394,13 @@ function exampleState() {
     B('abertura', 'Abertura + intercessão', 'abertura', 30, 'Pr. Jacinto · Pr. Caetano · Pra. Marta', CENTRO,
       'Período de intercessão / aquecimento: cada intercessor ora por um tema diferente.\nImportante ter fundo musical durante todo o período (possivelmente a Nena, por confirmar).'),
     B('inc', 'Adoração — INC', 'adoracao', 40, 'Louvor INC', CENTRO,
-      'Setlist possível, feito em conjunto com o Nathan.',
+      'Voz e acústica: Filipe e Nathan · Voz e piano: Nena · Voz: Nono\n'
+        + 'Guitarra elétrica: Ezak · Baixo: Jeferson · Bateria: Gabiru\nSetlist possível, feito em conjunto com o Nathan.',
       ['Cristo é meu fundamento', 'Great are you lord (Bethel)', 'Digno de tudo', 'Obsession (Martin Smith)', 'Yahwe tens meu Coração (Alessandro)', 'Firmado na Rocha (Alessandro)']),
     B('oracao', 'Oração — intercessão em trios', 'oracao', 10, 'Pr. Leo (sugestão)', 'Plateia (anéis 1 a 3)',
       'Dinâmica de intercessão em trios no público.\nSugestão: aproveitar estes minutos para trocar de banda com discrição (INC → ZION/Altomonte).'),
-    B('zion', 'Adoração — ZION / Altomonte', 'adoracao', 40, 'Louvor ZION / Altomonte', CENTRO, '',
+    B('zion', 'Adoração — ZION / Altomonte', 'adoracao', 40, 'Louvor ZION / Altomonte', CENTRO,
+      'Voz: Mari · Voz e violão: Davi\nBaixo: Guilherme · Bateria: Diedh · Teclado: Kadu',
       ['Volto os meus olhos - Davi', 'Vem Reinar em mim + voltemos ao início - Mari', 'Sobre as águas - Mari', 'Ao único']),
     B('palavra', 'Palavra — Tabernáculo', 'palavra', 20, 'Pra. Eunice', CENTRO, 'Mensagem: Tabernáculo.'),
     B('ccfv', 'Adoração — CCFV', 'adoracao', 40, 'Louvor CCFV', CENTRO,
@@ -869,9 +871,11 @@ function renderPrint() {
           ${t.items.length ? `<ul class="pr-chk">${t.items.map(x => `<li><span class="pr-box"></span><span class="pr-cat">${esc(catShort(x.cat))}</span>${esc(x.text)}</li>`).join('')}</ul>` : ''}
         </td></tr>`;
       }
-      // Músicas e notas numa linha à largura da tabela: ocupa menos altura do que na coluna «Bloco».
-      const extra = b.songs.length || b.notes
-        ? `<tr class="pr-extra"><td></td><td colspan="4">${b.songs.length ? `<div class="pr-songs"><b>Músicas</b> ${songsInline(b.songs)}</div>` : ''}${b.notes ? `<div class="pr-notes">${esc(b.notes)}</div>` : ''}</td></tr>`
+      // Músicas e notas numa linha à largura da tabela: ocupa menos altura do que na coluna «Bloco». As linhas das
+      // notas seguem-se no mesmo parágrafo (« · » quando não acabam em pontuação) para o dia caber numa folha.
+      const notes = b.notes.replace(/([.!?:;])\n+/g, '$1 ').replace(/\n+/g, ' · ');
+      const extra = b.songs.length || notes
+        ? `<tr class="pr-extra"><td></td><td colspan="4">${b.songs.length ? `<div class="pr-songs"><b>Músicas</b> ${songsInline(b.songs)}</div>` : ''}${notes ? `<div class="pr-notes">${esc(notes)}</div>` : ''}</td></tr>`
         : '';
       return `<tbody class="pr-grp t-${b.type}"><tr class="pr-block"><td>${fmtHM(it.start)}–${fmtHM(it.end)}</td><td class="pr-title"><b>${esc(b.title)}</b><span class="pr-type">${esc(typeOf(b.type).short)}</span></td><td>${fmtDur(b.duration)}</td><td>${esc(b.owner)}</td><td>${esc(b.place)}</td></tr>${extra}${trow}</tbody>`;
     }).join('');
